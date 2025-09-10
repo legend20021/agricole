@@ -2403,6 +2403,171 @@
         }
       }
 
+      /* ENHANCED SERVICES SECTION */
+      .services-section-enhanced {
+        background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .services-section-enhanced::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('img/galeria (8).jpg') center/cover;
+        opacity: 0.03;
+        z-index: 0;
+      }
+
+      .services-header-enhanced {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .services-title-enhanced {
+        color: var(--chosen-blue);
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+        font-weight: 800;
+        letter-spacing: -1px;
+        position: relative;
+      }
+
+      .services-title-enhanced::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--terra-orange), var(--chosen-gold));
+        border-radius: 2px;
+      }
+
+      .services-subtext-enhanced {
+        color: var(--earth-dark);
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+
+      .services-grid-enhanced {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .service-card-enhanced {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid rgba(198, 103, 38, 0.1);
+        backdrop-filter: blur(20px);
+        position: relative;
+      }
+
+      .service-card-enhanced:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 50px rgba(198, 103, 38, 0.2);
+        border-color: var(--terra-orange);
+      }
+
+      .service-image-wrapper {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .service-image-enhanced {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .service-card-enhanced:hover .service-image-enhanced {
+        transform: scale(1.1);
+      }
+
+      .service-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(198, 103, 38, 0.2), rgba(93, 78, 55, 0.2));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .service-card-enhanced:hover .service-overlay {
+        opacity: 1;
+      }
+
+      .service-content-enhanced {
+        padding: 30px;
+        position: relative;
+      }
+
+      .service-title-enhanced {
+        color: var(--chosen-blue);
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+
+      .service-description-enhanced {
+        color: var(--earth-dark);
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 25px;
+        font-weight: 400;
+      }
+
+      .service-cta-enhanced {
+        color: var(--terra-orange) !important;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+      }
+
+      .service-cta-enhanced:hover {
+        color: var(--chosen-blue) !important;
+        transform: translateX(5px);
+      }
+
+      .service-cta-enhanced::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--chosen-blue);
+        transition: width 0.3s ease;
+      }
+
+      .service-cta-enhanced:hover::after {
+        width: 100%;
+      }
+
       @media (max-width: 480px) {
         .container {
           padding: 0 12px;
@@ -2622,36 +2787,47 @@
     </style>
 
     <!-- SERVICES -->
-    <section id="services" class="section" aria-labelledby="servicesTitle">
+    <section id="services" class="section services-section-enhanced" aria-labelledby="servicesTitle">
       <div class="container">
-        <h3 id="servicesTitle" class="title">🔥 Legendary Experiences</h3>
-        <p class="subtext">Where earth meets artistry — unforgettable moments crafted from tradition, passion, and the finest ingredients nature provides.</p>
+        <div class="services-header-enhanced">
+          <h3 id="servicesTitle" class="title services-title-enhanced">Legendary Experiences</h3>
+          <p class="subtext services-subtext-enhanced">Where earth meets artistry — unforgettable moments crafted from tradition, passion, and the finest ingredients nature provides. Each experience is a journey into the soul of authentic cuisine.</p>
+        </div>
 
-        <div class="services" style="margin-top:18px;">
-          <article class="service" aria-labelledby="s1">
-            <img loading="lazy" src="img/galeria (3).jpg" alt="Farm Kitchen">
-            <div class="body">
-              <h4 id="s1">⭐ Sacred Kitchen</h4>
-              <p>Transcendent tasting menus where every dish tells the story of our soil. More than dining — it's a revelation.</p>
-              <a class="muted" href="#reservations">Enter the Experience →</a>
+        <div class="services services-grid-enhanced" style="margin-top:40px;">
+          <article class="service service-card-enhanced" aria-labelledby="s1">
+            <div class="service-image-wrapper">
+              <img loading="lazy" src="img/galeria (3).jpg" alt="Farm Kitchen" class="service-image-enhanced">
+              <div class="service-overlay"></div>
+            </div>
+            <div class="body service-content-enhanced">
+              <h4 id="s1" class="service-title-enhanced">Sacred Kitchen</h4>
+              <p class="service-description-enhanced">Transcendent tasting menus where every dish tells the story of our soil. More than dining — it's a revelation that awakens your senses and connects you to the land.</p>
+              <a class="muted service-cta-enhanced" href="#reservations">Enter the Experience →</a>
             </div>
           </article>
 
-          <article class="service" aria-labelledby="s2">
-            <img loading="lazy" src="img/tienda (1).jpg" alt="Farm Store">
-            <div class="body">
-              <h4 id="s2">🏪 Treasure Vault</h4>
-              <p>Pure artisanal treasures — handcrafted goods that carry the essence of our land directly to your home.</p>
-              <a class="muted" href="#services">Discover Treasures →</a>
+          <article class="service service-card-enhanced" aria-labelledby="s2">
+            <div class="service-image-wrapper">
+              <img loading="lazy" src="img/tienda (1).jpg" alt="Farm Store" class="service-image-enhanced">
+              <div class="service-overlay"></div>
+            </div>
+            <div class="body service-content-enhanced">
+              <h4 id="s2" class="service-title-enhanced">Treasure Vault</h4>
+              <p class="service-description-enhanced">Pure artisanal treasures — handcrafted goods that carry the essence of our land directly to your home. Each piece tells a story of passion and authenticity.</p>
+              <a class="muted service-cta-enhanced" href="#services">Discover Treasures →</a>
             </div>
           </article>
 
-          <article class="service" aria-labelledby="s3">
-            <img loading="lazy" src="img/galeria (4).jpg" alt="Handmade desserts">
-            <div class="body">
-              <h4 id="s3">🎨 Master Pairings</h4>
-              <p>Culinary alchemy — where desserts become poetry and drinks transform into liquid art. Pure magic.</p>
-              <a class="muted" href="#contact">Taste the Magic →</a>
+          <article class="service service-card-enhanced" aria-labelledby="s3">
+            <div class="service-image-wrapper">
+              <img loading="lazy" src="img/galeria (4).jpg" alt="Handmade desserts" class="service-image-enhanced">
+              <div class="service-overlay"></div>
+            </div>
+            <div class="body service-content-enhanced">
+              <h4 id="s3" class="service-title-enhanced">Master Pairings</h4>
+              <p class="service-description-enhanced">Culinary alchemy — where desserts become poetry and drinks transform into liquid art. Pure magic that transcends ordinary dining into extraordinary memories.</p>
+              <a class="muted service-cta-enhanced" href="#contact">Taste the Magic →</a>
             </div>
           </article>
         </div>
@@ -3152,6 +3328,107 @@
       
       .about-grid-enhanced {
         gap: 0;
+      }
+    }
+
+    /* SERVICES ENHANCED RESPONSIVE */
+    @media (max-width: 1024px) {
+      .services-section-enhanced {
+        padding: 60px 0;
+      }
+      
+      .services-title-enhanced {
+        font-size: 2.8rem;
+      }
+      
+      .services-grid-enhanced {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services-section-enhanced {
+        padding: 50px 0;
+      }
+      
+      .services-title-enhanced {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+      }
+      
+      .services-subtext-enhanced {
+        font-size: 1.1rem;
+        padding: 0 20px;
+      }
+      
+      .service-image-wrapper {
+        height: 200px;
+      }
+      
+      .service-content-enhanced {
+        padding: 25px 20px;
+      }
+      
+      .service-title-enhanced {
+        font-size: 1.5rem;
+      }
+      
+      .service-description-enhanced {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-section-enhanced {
+        padding: 40px 0;
+      }
+      
+      .services-header-enhanced {
+        margin-bottom: 40px;
+      }
+      
+      .services-title-enhanced {
+        font-size: 1.8rem;
+        line-height: 1.2;
+      }
+      
+      .services-subtext-enhanced {
+        font-size: 1rem;
+        padding: 0 15px;
+      }
+      
+      .services-grid-enhanced {
+        gap: 25px;
+        padding: 0 15px;
+      }
+      
+      .service-card-enhanced {
+        border-radius: 15px;
+      }
+      
+      .service-image-wrapper {
+        height: 180px;
+      }
+      
+      .service-content-enhanced {
+        padding: 20px 16px;
+      }
+      
+      .service-title-enhanced {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+      }
+      
+      .service-description-enhanced {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+      
+      .service-cta-enhanced {
+        font-size: 1rem;
       }
     }
     </style>
