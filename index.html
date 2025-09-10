@@ -12,23 +12,52 @@
   <link rel="icon" href="img/imgi_3_asset1_naranja.svg" type="image/svg+xml">
 
   <style>
-    /* ======= DESIGN TOKENS ======= */
+    /* ======= DESIGN TOKENS - The Chosen Inspired Palette ======= */
     :root{
+      /* Primary Orange (conservado) */
       --primary:#c66726;
       --primary-dark:#a85520;
       --primary-light:#e17b3c;
-      --accent:#e3c998;
-      --accent-2:#d4b17b;
-      --accent-3:#f5e6d3;
-      --bg:#faf7f2;
-      --text:#2d1810;
-      --muted:#8b6f63;
+      
+      /* The Chosen Inspired Colors */
+      --chosen-blue:#2c4a6b;
+      --chosen-blue-light:#4a6b8a;
+      --chosen-blue-dark:#1a2f47;
+      --chosen-teal:#4a7c7e;
+      --chosen-teal-light:#6b9b9d;
+      --chosen-gold:#b8860b;
+      --chosen-gold-light:#daa520;
+      --chosen-bronze:#8b6914;
+      --chosen-sand:#d2b48c;
+      --chosen-earth:#8b7355;
+      --chosen-stone:#696969;
+      
+      /* Updated Accent Colors */
+      --accent:#b8860b;
+      --accent-2:#8b6914;
+      --accent-3:#d2b48c;
+      --accent-teal:#4a7c7e;
+      
+      /* Backgrounds & Text */
+      --bg:#f5f3f0;
+      --bg-secondary:#e8e3de;
+      --text:#2c2416;
+      --text-light:#4a4032;
+      --muted:#6b5d4f;
       --white:#ffffff;
-      --glass: rgba(255,255,255,0.08);
+      
+      /* New themed colors */
+      --glass: rgba(44,74,107,0.08);
+      --shadow-chosen: rgba(44,74,107,0.15);
+      --gradient-primary: linear-gradient(135deg, var(--primary), var(--chosen-gold));
+      --gradient-secondary: linear-gradient(135deg, var(--chosen-blue), var(--chosen-teal));
+      --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-2));
+      
+      /* Layout */
       --radius:14px;
       --container:1200px;
-      --shadow-lg:0 20px 60px rgba(198,103,38,0.12);
-      --shadow-sm:0 8px 20px rgba(198,103,38,0.08);
+      --shadow-lg:0 20px 60px var(--shadow-chosen);
+      --shadow-sm:0 8px 20px rgba(44,74,107,0.08);
       --nav-height:72px;
     }
 
@@ -42,35 +71,112 @@
     /* ======= VISUAL HELPERS ======= */
     .muted{color:var(--muted)}
     .center{text-align:center}
-    .card{background:var(--white);border-radius:12px;padding:18px;box-shadow:var(--shadow-sm)}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-weight:700;cursor:pointer;border:0}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#111}
-    .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+    .card{background:var(--white);border-radius:12px;padding:18px;box-shadow:var(--shadow-sm);border:1px solid rgba(44,74,107,0.05)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;font-weight:700;cursor:pointer;border:0;transition:all 0.3s ease}
+    .btn-primary{background:var(--gradient-primary);color:var(--white);box-shadow:0 4px 12px rgba(198,103,38,0.2);margin-bottom: 12px;}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(198,103,38,0.3)}
+    .btn-ghost{background:transparent;border:1px solid var(--white);color:var(--white);margin-bottom: 12px;}
+    .btn-ghost:hover{background:var(--chosen-blue);color:var(--white)}
 
     h1,h2,h3,h4{font-family:"Playfair Display",serif;margin:0}
     p{margin:0 0 12px;line-height:1.5}
 
-    /* ======= SPLASH (kept as you liked) ======= */
+    /* ======= SPLASH (updated with The Chosen palette) ======= */
     .splash{
       position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(180deg, rgba(14,10,8,0.92), rgba(28,20,16,0.96));
+      background:linear-gradient(135deg, var(--chosen-blue-dark), var(--chosen-blue), var(--chosen-teal));
       padding:20px;transition:opacity .38s cubic-bezier(.22,.9,.12,1),transform .38s ease;will-change:opacity,transform;
     }
     .splash.hidden{opacity:0;transform:translateY(-6px) scale(.998);pointer-events:none;visibility:hidden}
-    .splash-card{width:min(920px,94%);display:flex;align-items:center;gap:18px;background:rgba(255,255,255,0.02);border-radius:14px;padding:18px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,0.03)}
+    .splash-card{width:min(920px,94%);display:flex;align-items:center;gap:18px;background:rgba(255,255,255,0.05);border-radius:14px;padding:18px;margin-bottom:40px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}
     .splash-left{display:flex;gap:12px;align-items:center;min-width:0}
-    .splash-left img{height:56px}
+    .splash-left img{height:56px;filter:drop-shadow(0 2px 8px rgba(184,134,11,0.3))}
     .splash-left h1{font-size:20px;color:var(--white)}
-    .splash-left p{margin-top:2px;color:rgba(255,255,255,0.88);font-weight:600;font-size:13px}
+    .splash-left p{margin-top:2px;color:var(--chosen-sand);font-weight:600;font-size:13px}
     .splash-right{margin-left:auto;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:160px}
     .progress-ring{width:88px;height:88px;position:relative;display:block}
     .progress-ring svg{width:100%;height:100%;transform:rotate(-90deg);display:block}
-    .progress-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:var(--white)}
-    .progress-sub{font-size:11px;color:rgba(255,255,255,0.8);font-weight:600;margin-top:4px}
-    .accent-bar{width:72px;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 24px rgba(180,95,6,0.12)}
-    @media (max-width:760px){ .splash-card{flex-direction:column;align-items:flex-start;padding:14px;gap:12px} .splash-right{align-self:stretch;width:100%;display:flex;justify-content:space-between;padding:6px 0 0} .progress-ring{width:72px;height:72px} }
+    .progress-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#ffffff !important}
+    .progress-sub{font-size:11px;color:#ffffff !important;font-weight:600;margin-top:4px}
+    .accent-bar{width:72px;height:6px;border-radius:999px;background:var(--white);}
+    
+    /* Responsive splash screen */
+    @media (max-width: 760px) {
+      .splash {
+        padding: 40px 20px 20px;
+        align-items: flex-start;
+        padding-top: 80px; /* Más margen arriba para evitar colisión con logo */
+      }
+      
+      .splash-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 16px;
+        margin-top: 20px; /* Margen adicional */
+        margin-bottom: 30px; /* Margen inferior en móvil */
+      }
+      
+      .splash-left {
+        width: 100%;
+        gap: 16px;
+      }
+      
+      .splash-left img {
+        height: 60px; /* Ligeramente más pequeño en móvil */
+        margin-top: 20px; /* Más espacio arriba del logo */
+      }
+      
+      .splash-right {
+        align-self: stretch;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 0;
+        padding: 8px 0 0;
+        gap: 20px;
+      }
+      
+      .progress-ring {
+        width: 72px;
+        height: 72px;
+      }
+      
+      .splash-motto {
+        flex: 1;
+        align-items: flex-end;
+      }
+      
+      .splash-motto p {
+        font-size: 13px;
+        text-align: right;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .splash {
+        padding-top: 100px; /* Aún más margen en pantallas muy pequeñas */
+      }
+      
+      .splash-card {
+        margin-top: 30px;
+        margin-bottom: 40px; /* Más margen inferior en pantallas pequeñas */
+        padding: 16px;
+      }
+      
+      .splash-left img {
+        height: 50px;
+        margin-top: 25px; /* Aún más espacio en pantallas muy pequeñas */
+      }
+      
+      .splash-subtitle {
+        font-size: 16px;
+      }
+    }
 
-    /* ======= NAVBAR (enhanced responsive) ======= */
+    /* ======= NAVBAR (enhanced with The Chosen colors) ======= */
     .navbar {
       position: fixed;
       top: 0;
@@ -83,10 +189,11 @@
       justify-content: center;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(198,103,38,0.08);
+      box-shadow: 0 4px 20px var(--shadow-chosen);
       transition: all 0.45s cubic-bezier(0.2,0.9,0.2,1);
       transform: translateY(-110%);
       opacity: 0;
+      border-bottom: 1px solid rgba(44,74,107,0.1);
     }
 
     .navbar.visible {
@@ -152,8 +259,8 @@
     .nav-menu a:hover, 
     .nav-menu a:focus,
     .nav-menu a.active {
-      color: var(--primary);
-      background: rgba(198,103,38,0.08);
+      color: var(--chosen-blue);
+      background: rgba(44,74,107,0.08);
       transform: translateY(-2px);
       outline: none;
     }
@@ -165,7 +272,7 @@
       left: 50%;
       width: 0;
       height: 2px;
-      background: var(--primary);
+      background: var(--chosen-teal);
       transition: all 0.3s ease;
       transform: translateX(-50%);
       opacity: 0;
@@ -184,24 +291,24 @@
 
     .nav-menu a.active i {
       transform: scale(1.1);
-      color: var(--primary);
+      color: var(--chosen-teal);
     }
 
     .nav-cta {
-      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      background: var(--gradient-primary);
       color: var(--white);
       padding: 10px 20px;
       border-radius: 999px;
       font-weight: 700;
       box-shadow: 0 4px 12px rgba(198,103,38,0.2);
       transition: all 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(184,134,11,0.2);
     }
 
     .nav-cta:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(198,103,38,0.3);
-      background: linear-gradient(90deg, var(--primary-light), var(--primary));
+      background: linear-gradient(90deg, var(--chosen-gold), var(--primary));
       color: var(--white) !important;
     }
 
@@ -221,7 +328,7 @@
     }
 
     .mobile-toggle:hover {
-      background: rgba(198,103,38,0.08);
+      background: rgba(44,74,107,0.08);
     }
 
     /* Mobile menu */
@@ -242,6 +349,7 @@
         right: 16px;
         top: 50%;
         transform: translateY(-50%);
+        color: var(--chosen-blue);
       }
 
       .nav-menu {
@@ -252,9 +360,9 @@
         flex-direction: column;
         padding: 12px;
         border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(198,103,38,0.15);
+        box-shadow: 0 10px 30px var(--shadow-chosen);
         width: 250px;
-        border: 1px solid rgba(198,103,38,0.1);
+        border: 1px solid rgba(44,74,107,0.1);
         
         /* Cambios para animación suave */
         display: flex;
@@ -314,14 +422,14 @@
       }
     }
 
-    /* ======= HERO + SECTIONS (spacing refined) ======= */
-    .hero{min-height:76vh;display:flex;align-items:center;justify-content:center;padding:6rem 1.5rem;position:relative;color:var(--white);background:linear-gradient(180deg,rgba(0,0,0,0.24),rgba(0,0,0,0.32)),url('img/galeria (1).jpg') center/cover no-repeat}
-    .hero-card{max-width:980px;padding:3rem;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.08));border-radius:18px;box-shadow:var(--shadow-lg);backdrop-filter:blur(4px);text-align:center}
-    .hero h2{font-size:clamp(1.8rem,3.8vw,3.4rem);margin-bottom:12px}
-    .lead{font-size:1.05rem;color:var(--accent-2);margin-bottom:18px}
+    /* ======= HERO + SECTIONS (updated with The Chosen colors) ======= */
+    .hero{min-height:76vh;display:flex;align-items:center;justify-content:center;padding:6rem 1.5rem;position:relative;color:var(--white);background:linear-gradient(135deg,rgba(44,74,107,0.7),rgba(74,124,126,0.6)),url('img/galeria (1).jpg') center/cover no-repeat}
+    .hero-card{max-width:980px;padding:3rem;background:linear-gradient(135deg,rgba(255,255,255,0.05),rgba(44,74,107,0.1));border-radius:18px;box-shadow:var(--shadow-lg);backdrop-filter:blur(8px);text-align:center;border:1px solid rgba(255,255,255,0.1)}
+    .hero h2{font-size:clamp(1.8rem,3.8vw,3.4rem);margin-bottom:12px;text-shadow:0 2px 4px rgba(0,0,0,0.3);margin-top: 12px;}
+    .lead{font-size:1.05rem;color:var(--chosen-sand);margin-bottom:18px;text-shadow:0 1px 2px rgba(0,0,0,0.5)}
     .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
     .section{padding:72px 0}
-    .title{font-size:clamp(1.4rem,3.2vw,2.2rem);color:var(--primary);text-align:center;margin-bottom:8px}
+    .title{font-size:clamp(1.4rem,3.2vw,2.2rem);color:var(--chosen-blue);text-align:center;margin-bottom:8px}
     .subtext{color:var(--muted);text-align:center;max-width:820px;margin:0 auto 24px}
 
     /* content grids */
@@ -329,8 +437,8 @@
     @media (max-width:900px){.about-grid{grid-template-columns:1fr}}
 
     .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-    .service{border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(16,10,8,0.06);transition:transform .28s;display:flex;flex-direction:column;background:var(--white)}
-    .service:hover{transform:translateY(-8px)}
+    .service{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .28s;display:flex;flex-direction:column;background:var(--white);border:1px solid rgba(44,74,107,0.05)}
+    .service:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
     .service img{width:100%;height:200px;object-fit:cover}
     .service .body{padding:16px}
 
@@ -340,10 +448,10 @@
     .gallery-item:hover img{transform:scale(1.06)}
 
     /* lightbox */
-    .lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:2000;visibility:hidden;opacity:0;transition:opacity .2s ease,visibility .2s}
+    .lightbox{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(44,74,107,0.9),rgba(26,47,71,0.95));z-index:2000;visibility:hidden;opacity:0;transition:opacity .2s ease,visibility .2s;backdrop-filter:blur(4px)}
     .lightbox.show{visibility:visible;opacity:1}
-    .lightbox img{max-width:95%;max-height:85%;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,0.6)}
-    .lightbox .close{position:absolute;top:20px;right:20px;font-size:1.2rem;color:#fff;background:rgba(0,0,0,0.28);padding:8px 10px;border-radius:8px;cursor:pointer;border:0}
+    .lightbox img{max-width:95%;max-height:85%;border-radius:8px;box-shadow:0 30px 80px rgba(44,74,107,0.6);border:2px solid rgba(255,255,255,0.1)}
+    .lightbox .close{position:absolute;top:20px;right:20px;font-size:1.2rem;color:#fff;background:var(--chosen-blue);padding:8px 10px;border-radius:8px;cursor:pointer;border:1px solid rgba(255,255,255,0.2);transition:all 0.3s ease}
 
     /* contact form */
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -359,28 +467,38 @@
 
     /* footer */
     footer {
-      background: linear-gradient(180deg, var(--primary-dark), var(--primary));
+      background: var(--gradient-secondary);
       color: var(--white);
       padding: 60px 0 40px;
       margin-top: 18px;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, var(--chosen-blue-dark), var(--chosen-teal));
+      opacity: 0.1;
     }
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 40px;
       align-items: start;
+      position: relative;
+      z-index: 1;
     }
     .footer-grid h4 {
-      color: var(--accent);
+      color: var(--chosen-sand);
       margin-bottom: 20px;
       font-size: 1.2em;
     }
     .footer-grid .muted {
-      color: var(--accent-3);
+      color: rgba(255,255,255,0.8);
       opacity: 0.9;
     }
     .footer-grid a:hover {
-      color: var(--accent);
+      color: var(--chosen-gold);
       transition: color 0.3s ease;
     }
     .socials a {
@@ -391,15 +509,16 @@
       height: 44px;
       border-radius: 10px;
       margin-right: 12px;
-      background: var(--accent);
-      color: var(--primary-dark);
+      background: var(--chosen-gold);
+      color: var(--chosen-blue-dark);
       text-decoration: none;
       transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
     }
     .socials a:hover {
-      background: var(--accent-2);
+      background: var(--primary);
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(198,103,38,0.2);
+      box-shadow: 0 8px 20px rgba(184,134,11,0.3);
     }
 
   </style>
@@ -474,6 +593,7 @@
         background: rgba(255,255,255,0.05);
         border-radius: var(--radius);
         padding: 40px;
+        margin-bottom: 40px;
         box-shadow: 
           0 25px 50px -12px rgba(0,0,0,0.25),
           0 0 30px rgba(255,255,255,0.1),
@@ -562,12 +682,12 @@
         justify-content: center;
         font-weight: 600;
         font-size: 18px;
-        color: var(--white);
+        color: #ffffff !important;
       }
 
       .progress-sub {
         font-size: 9px;
-        color: var(--accent);
+        color: #ffffff !important;
         font-weight: 500;
         margin-top: 2px;
         text-transform: uppercase;
@@ -743,8 +863,8 @@
       width: 72px;
       height: 4px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      box-shadow: 0 4px 12px rgba(227,201,152,0.3);
+      background: linear-gradient(90deg, var(--white), var(--white));
+     
     }
 
     .splash-motto p {
@@ -829,29 +949,39 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Our Essence</span>
-          <h3 id="aboutTitle" class="title">Our Philosophy</h3>
-          <p class="subtext">We cultivate more than food — we cultivate experiences. Our organic farm and kitchen are committed to regenerative practices, seasonal menus and authentic hospitality.</p>
+          <span class="section-tag">Our Essence</span>
+          <h3 id="aboutTitle" class="title">The Art of Conscious Cultivation</h3>
+          <p class="subtext">In the heart of Baja California Sur, we cultivate more than ingredients — we nurture a legacy of earth-conscious gastronomy, where time, nature, and tradition converge to create extraordinary moments.</p>
         </div>
 
         <div class="about-grid">
           <div class="about-content">
             <div class="philosophy-cards">
-              <div class="philosophy-card">
-                <i class="fa-solid fa-seedling"></i>
-                <h4>Organic Excellence</h4>
-                <p>37-acre organic farm providing fresh produce with zero synthetic chemicals. We believe in transparent supply chains and direct relationships with our community.</p>
+              <div class="philosophy-card" style="background-image: url('img/galeria (5).jpg')">
+                <div class="philosophy-number">01</div>
+                <div class="philosophy-content">
+                  <h4>The Sacred Rhythm of Time</h4>
+                  <p>We stand in conscious opposition to the modern rush that prioritizes quantity over quality.</p>
+                  <div class="philosophy-meta">Earth · Time · Patience</div>
+                </div>
               </div>
               
-              <div class="philosophy-card">
-                <i class="fa-solid fa-wheat-awn"></i>
-                <h4>Farm to Table Journey</h4>
-                <p>From soil to plate: our chefs work closely with the farmers to craft menus that change with harvest cycles — celebrating the ingredients at their peak.</p>
+              <div class="philosophy-card" style="background-image: url('img/galeria (6).jpg')">
+                <div class="philosophy-number">02</div>
+                <div class="philosophy-content">
+                  <h4>Living Canvas of Earth</h4>
+                  <p>Our 37 acres are not mere land, but a living canvas where we practice the ancient art of cultivation.</p>
+                  <div class="philosophy-meta">Harmony · Wisdom · Respect</div>
+                </div>
               </div>
 
-              <div class="philosophy-card">
-                <i class="fa-solid fa-users"></i>
-                <h4>Community Connection</h4>
-                <p>Workshops, farm tours, and private events are available. Our goal is to educate and inspire sustainable living through food.</p>
+              <div class="philosophy-card" style="background-image: url('img/galeria (7).jpg')">
+                <div class="philosophy-number">03</div>
+                <div class="philosophy-content">
+                  <h4>The Poetry of Taste</h4>
+                  <p>Each creation is a journey through the senses, where texture intertwines with tradition and innovation.</p>
+                  <div class="philosophy-meta">Senses · Innovation · Art</div>
+                </div>
               </div>
             </div>
 
@@ -907,30 +1037,73 @@
 
     <style>
       .about-section {
-        background: linear-gradient(to bottom, var(--bg), #fff);
-        padding: 100px 0;
+      background: var(--bg);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 60px;
+      position: relative;
+    }
+
+    .section-header::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--primary);
+      margin: 40px auto 0;
+      opacity: 0.3;
+    }
+
+    .title {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 25px;
+      font-weight: 400;
+      color: var(--primary);
+    }
+
+    .subtext {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+      font-weight: 300;
+      color: var(--text);
+      opacity: 0.85;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-family: "Inter", sans-serif;
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      opacity: 0.7;
+    }    @media (max-width: 768px) {
+      .about-section {
+        padding: 40px 0;
       }
 
       .section-header {
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto 60px;
+        margin: 0 auto 30px;
+        padding: 0 20px;
       }
 
       .section-tag {
-        display: inline-block;
-        padding: 6px 16px;
-        background: rgba(198,103,38,0.1);
-        color: var(--primary);
-        border-radius: 30px;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        font-size: 12px;
+        padding: 4px 10px;
       }
-
-      .about-grid {
+    }      .about-grid {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
         gap: 40px;
@@ -939,40 +1112,199 @@
 
       .philosophy-cards {
         display: grid;
-        gap: 24px;
-        margin-bottom: 40px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 20px;
+        position: relative;
       }
 
       .philosophy-card {
-        background: var(--white);
-        padding: 24px;
-        border-radius: var(--radius);
+        background-size: cover;
+        background-position: center;
+        height: 280px;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
         box-shadow: var(--shadow-sm);
-        transition: all 0.3s ease;
-        border: 1px solid rgba(198,103,38,0.1);
+        display: flex;
+        align-items: flex-end;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
       }
-
+      
       .philosophy-card:hover {
         transform: translateY(-5px);
         box-shadow: var(--shadow-lg);
       }
-
-      .philosophy-card i {
-        font-size: 24px;
-        color: var(--primary);
-        margin-bottom: 16px;
+      
+      .philosophy-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(44,74,107,0.3), rgba(26,47,71,0.8));
+        backdrop-filter: blur(1px);
+        z-index: 1;
       }
-
+      
+      .philosophy-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: inherit;
+        background-size: inherit;
+        background-position: inherit;
+        filter: blur(0.5px) brightness(0.7);
+        z-index: 0;
+      }
+      
+      .philosophy-content {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+        color: white;
+        background: rgba(44,74,107,0.4);
+        backdrop-filter: blur(6px);
+        border-radius: 8px;
+        margin: 15px;
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+      
+      .philosophy-number {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--chosen-gold);
+        backdrop-filter: blur(4px);
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        color: var(--chosen-blue-dark);
+        padding: 8px 12px;
+        border-radius: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        z-index: 3;
+        border: 1px solid rgba(255,255,255,0.3);
+        box-shadow: 0 2px 8px rgba(184,134,11,0.3);
+      }
+      
       .philosophy-card h4 {
-        color: var(--text);
-        margin-bottom: 12px;
+        color: white;
+        margin: 0 0 8px;
         font-size: 1.2rem;
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        line-height: 1.3;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      }
+      
+      .philosophy-card p {
+        display: block;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+        color: rgba(255,255,255,0.95);
+        opacity: 1;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+      }
+      
+      .philosophy-meta {
+        font-size: 0.7rem;
+        color: var(--chosen-sand);
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-top: 12px;
+        opacity: 0.95;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.5);
       }
 
-      .philosophy-card p {
-        color: var(--muted);
-        line-height: 1.6;
-        margin: 0;
+      @media (max-width: 1024px) {
+        .about-section {
+          padding: 80px 0;
+        }
+
+        .title {
+          font-size: 2.6rem;
+        }
+
+        .philosophy-cards {
+          gap: 20px;
+        }
+
+        .philosophy-card {
+          height: 260px;
+        }
+
+        .philosophy-card h4 {
+          font-size: 1.15rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .about-section {
+          padding: 60px 0;
+        }
+
+        .section-header {
+          margin-bottom: 40px;
+          padding: 0 20px;
+        }
+
+        .title {
+          font-size: 2.2rem;
+          margin-bottom: 20px;
+        }
+
+        .subtext {
+          font-size: 1rem;
+          margin-bottom: 30px;
+        }
+
+        .philosophy-cards {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+          padding: 0 20px;
+        }
+
+        .philosophy-card {
+          height: 240px;
+        }
+
+        .philosophy-card h4 {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .about-section {
+          padding: 50px 0;
+        }
+
+        .section-header {
+          margin-bottom: 30px;
+        }
+
+        .title {
+          font-size: 1.8rem;
+        }
+
+        .philosophy-cards {
+          grid-template-columns: 1fr;
+          gap: 15px;
+          padding: 0 15px;
+        }
+
+        .philosophy-card {
+          height: 200px;
+        }
+
+        .philosophy-card h4 {
+          font-size: 1.1rem;
+        }
+
+        .philosophy-meta {
+          font-size: 0.7rem;
+        }
       }
 
       .stats-container {
@@ -991,22 +1323,27 @@
         overflow: hidden;
         box-shadow: var(--shadow-sm);
         transition: all 0.3s ease;
+        border: 1px solid rgba(44,74,107,0.05);
       }
 
       .stat-card:hover {
         transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
       }
 
       .stat-icon {
         font-size: 28px;
-        color: var(--primary);
+        color: var(--chosen-teal);
         margin-bottom: 12px;
       }
 
       .stat-number {
         font-size: 2.5rem;
         font-weight: 700;
-        color: var(--primary);
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         line-height: 1;
         margin-bottom: 8px;
       }
@@ -1016,7 +1353,7 @@
       }
 
       .stat-label {
-        color: var(--muted);
+        color: var(--chosen-blue);
         font-size: 0.9rem;
         font-weight: 500;
       }
@@ -1027,8 +1364,9 @@
         left: 20%;
         width: 60%;
         height: 3px;
-        background: linear-gradient(90deg, var(--primary), var(--accent));
+        background: var(--gradient-primary);
         border-radius: 3px;
+        box-shadow: 0 2px 8px rgba(184,134,11,0.2);
       }
 
       .about-images {
@@ -1295,7 +1633,7 @@
       @media (max-width: 1024px) {
         .about-grid {
           grid-template-columns: 1fr;
-          max-width: 800px;
+          max-width: 100%;
           margin: 0 auto;
         }
         
@@ -1383,6 +1721,7 @@
           font-size: 2.2rem;
           background: linear-gradient(135deg, var(--primary), var(--primary-light));
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
         }
       }
@@ -1435,7 +1774,7 @@
         .philosophy-card p {
           font-size: 0.95rem;
           line-height: 1.6;
-          color: var(--text);
+          color: white;
         }
 
         .section-header {
@@ -1635,11 +1974,11 @@
         }
 
         .subtext {
-          font-size: 0.95rem;
-          line-height: 1.6;
+          font-size: 0.92rem;
+          line-height: 1.5;
           color: var(--muted);
-          max-width: 100%;
-          padding: 0 8px;
+          max-width: 90%;
+          margin: 0 auto;
         }
 
         .services {
@@ -2025,7 +2364,7 @@
       }
 
       // Animation: 0 -> 100% in 4000ms with easeOutCubic
-      const DURATION = 4000;
+      const DURATION = 3000;
       function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 
       let startTime = null;
