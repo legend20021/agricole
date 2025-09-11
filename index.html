@@ -2835,60 +2835,299 @@
     </section>
 
     <!-- GALLERY -->
-    <section id="gallery" class="section" aria-labelledby="galleryTitle">
+    <section id="gallery" class="section gallery-section-enhanced" aria-labelledby="galleryTitle">
       <div class="container">
-        <h3 id="galleryTitle" class="title">Gallery</h3>
-        <p class="subtext">Moments captured from our farm, kitchen and store. Click to enlarge.</p>
+        <div class="gallery-header-enhanced">
+          <h3 id="galleryTitle" class="title gallery-title-enhanced">Visual Stories</h3>
+          <p class="subtext gallery-subtext-enhanced">Where every frame captures the soul of our craft — a journey through flavors, textures, and the artistry that defines our legacy.</p>
+        </div>
 
-        <div class="gallery-grid" id="galleryGrid" style="margin-top:16px;">
-          <div class="gallery-item"><img loading="lazy" src="img/galeria (1).jpg" alt="Gallery image 1"></div>
-          <div class="gallery-item"><img loading="lazy" src="img/galeria (2).jpg" alt="Gallery image 2"></div>
-          <div class="gallery-item"><img loading="lazy" src="img/galeria (3).jpg" alt="Gallery image 3"></div>
-          <div class="gallery-item"><img loading="lazy" src="img/galeria (4).jpg" alt="Gallery image 4"></div>
-          <div class="gallery-item"><img loading="lazy" src="img/galeria (5).jpg" alt="Gallery image 5"></div>
-          <div class="gallery-item"><img loading="lazy" src="img/galeria (6).jpg" alt="Gallery image 6"></div>
-          <div class="gallery-item"><img loading="lazy" src="img/galeria (7).jpg" alt="Gallery image 7"></div>
-          <div class="gallery-item"><img loading="lazy" src="img/galeria (8).jpg" alt="Gallery image 8"></div>
+        <div class="gallery-carousel-container">
+          <div class="gallery-carousel" id="galleryCarousel">
+            <div class="gallery-slide active">
+              <div class="gallery-card-enhanced">
+                <div class="gallery-image-wrapper">
+                  <img loading="lazy" src="img/galeria (1).jpg" alt="Farm Kitchen Artistry" class="gallery-image-enhanced">
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h4>Farm Kitchen Artistry</h4>
+                      <p>Where tradition meets innovation</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-slide">
+              <div class="gallery-card-enhanced">
+                <div class="gallery-image-wrapper">
+                  <img loading="lazy" src="img/galeria (2).jpg" alt="Sacred Ingredients" class="gallery-image-enhanced">
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h4>Sacred Ingredients</h4>
+                      <p>Nature's finest selection</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-slide">
+              <div class="gallery-card-enhanced">
+                <div class="gallery-image-wrapper">
+                  <img loading="lazy" src="img/galeria (3).jpg" alt="Culinary Excellence" class="gallery-image-enhanced">
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h4>Culinary Excellence</h4>
+                      <p>Every dish tells a story</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-slide">
+              <div class="gallery-card-enhanced">
+                <div class="gallery-image-wrapper">
+                  <img loading="lazy" src="img/galeria (4).jpg" alt="Artisan Creations" class="gallery-image-enhanced">
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h4>Artisan Creations</h4>
+                      <p>Handcrafted with passion</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-slide">
+              <div class="gallery-card-enhanced">
+                <div class="gallery-image-wrapper">
+                  <img loading="lazy" src="img/galeria (5).jpg" alt="Farm to Table" class="gallery-image-enhanced">
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h4>Farm to Table</h4>
+                      <p>Fresh from our earth</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-slide">
+              <div class="gallery-card-enhanced">
+                <div class="gallery-image-wrapper">
+                  <img loading="lazy" src="img/galeria (6).jpg" alt="Heritage Techniques" class="gallery-image-enhanced">
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h4>Heritage Techniques</h4>
+                      <p>Ancient wisdom, modern mastery</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-slide">
+              <div class="gallery-card-enhanced">
+                <div class="gallery-image-wrapper">
+                  <img loading="lazy" src="img/galeria (7).jpg" alt="Flavor Alchemy" class="gallery-image-enhanced">
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h4>Flavor Alchemy</h4>
+                      <p>Where magic happens</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-slide">
+              <div class="gallery-card-enhanced">
+                <div class="gallery-image-wrapper">
+                  <img loading="lazy" src="img/galeria (8).jpg" alt="Authentic Experience" class="gallery-image-enhanced">
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h4>Authentic Experience</h4>
+                      <p>A journey for the senses</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="gallery-navigation">
+            <button class="gallery-nav-btn gallery-prev" id="galleryPrev">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="gallery-nav-btn gallery-next" id="galleryNext">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Indicators -->
+          <div class="gallery-indicators">
+            <div class="gallery-indicator active" data-slide="0"></div>
+            <div class="gallery-indicator" data-slide="1"></div>
+            <div class="gallery-indicator" data-slide="2"></div>
+            <div class="gallery-indicator" data-slide="3"></div>
+            <div class="gallery-indicator" data-slide="4"></div>
+            <div class="gallery-indicator" data-slide="5"></div>
+            <div class="gallery-indicator" data-slide="6"></div>
+            <div class="gallery-indicator" data-slide="7"></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- STORE -->
-    <section id="store" class="section" aria-labelledby="storeTitle" style="background:linear-gradient(180deg,var(--white),var(--bg-secondary));">
+    <section id="store" class="section store-section-enhanced" aria-labelledby="storeTitle">
       <div class="container">
-        <h3 id="storeTitle" class="title">🛍️ Artisan Collection</h3>
-        <p class="subtext">Premium treasures born from our soil — take home the essence of our earth, bottled, crafted, and perfected.</p>
+        <div class="store-header-enhanced">
+          <h3 id="storeTitle" class="title store-title-enhanced">Artisan Collection</h3>
+          <p class="subtext store-subtext-enhanced">Premium treasures born from our soil — take home the essence of our earth, bottled, crafted, and perfected. Each piece carries the soul of authentic craftsmanship.</p>
+        </div>
 
-        <div class="services" style="margin-top:18px;">
-          <article class="service"><img loading="lazy" src="img/tienda (1).jpg" alt="Store item 1"><div class="body"><h4>🍯 Golden Nectar</h4><p class="muted">Liquid gold from sacred hives — pure, raw, transcendent.</p></div></article>
-          <article class="service"><img loading="lazy" src="img/tienda (2).jpg" alt="Store item 2"><div class="body"><h4>🫙 Heritage Preserves</h4><p class="muted">Seasonal treasures captured at peak perfection.</p></div></article>
-          <article class="service"><img loading="lazy" src="img/tienda (3).jpg" alt="Store item 3"><div class="body"><h4>🥕 Earth's Bounty Box</h4><p class="muted">Curated weekly harvest — nature's finest selection.</p></div></article>
-          <article class="service"><img loading="lazy" src="img/tienda (4).jpg" alt="Store item 4"><div class="body"><h4>🍞 Sacred Grains</h4><p class="muted">Ancient recipes, modern mastery — every loaf tells a story.</p></div></article>
+        <div class="store-grid-enhanced">
+          <article class="store-card-enhanced">
+            <div class="store-image-wrapper">
+              <img loading="lazy" src="img/tienda (1).jpg" alt="Golden Nectar Honey" class="store-image-enhanced">
+              <div class="store-overlay">
+                <div class="store-badge">Premium</div>
+              </div>
+            </div>
+            <div class="store-content-enhanced">
+              <h4 class="store-item-title">Golden Nectar</h4>
+              <p class="store-item-description">Liquid gold from sacred hives — pure, raw, transcendent.</p>
+              <div class="store-price-section">
+                <span class="store-price">$24.99</span>
+                <button class="store-btn-enhanced">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="store-card-enhanced">
+            <div class="store-image-wrapper">
+              <img loading="lazy" src="img/tienda (2).jpg" alt="Heritage Preserves" class="store-image-enhanced">
+              <div class="store-overlay">
+                <div class="store-badge">Seasonal</div>
+              </div>
+            </div>
+            <div class="store-content-enhanced">
+              <h4 class="store-item-title">Heritage Preserves</h4>
+              <p class="store-item-description">Seasonal treasures captured at peak perfection.</p>
+              <div class="store-price-section">
+                <span class="store-price">$18.99</span>
+                <button class="store-btn-enhanced">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="store-card-enhanced">
+            <div class="store-image-wrapper">
+              <img loading="lazy" src="img/tienda (3).jpg" alt="Earth's Bounty Box" class="store-image-enhanced">
+              <div class="store-overlay">
+                <div class="store-badge">Weekly</div>
+              </div>
+            </div>
+            <div class="store-content-enhanced">
+              <h4 class="store-item-title">Earth's Bounty Box</h4>
+              <p class="store-item-description">Curated weekly harvest — nature's finest selection.</p>
+              <div class="store-price-section">
+                <span class="store-price">$45.99</span>
+                <button class="store-btn-enhanced">Subscribe</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="store-card-enhanced">
+            <div class="store-image-wrapper">
+              <img loading="lazy" src="img/tienda (4).jpg" alt="Sacred Grains" class="store-image-enhanced">
+              <div class="store-overlay">
+                <div class="store-badge">Artisan</div>
+              </div>
+            </div>
+            <div class="store-content-enhanced">
+              <h4 class="store-item-title">Sacred Grains</h4>
+              <p class="store-item-description">Ancient recipes, modern mastery — every loaf tells a story.</p>
+              <div class="store-price-section">
+                <span class="store-price">$12.99</span>
+                <button class="store-btn-enhanced">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="store-card-enhanced">
+            <div class="store-image-wrapper">
+              <img loading="lazy" src="img/tienda (5).jpg" alt="Herb Elixirs" class="store-image-enhanced">
+              <div class="store-overlay">
+                <div class="store-badge">Healing</div>
+              </div>
+            </div>
+            <div class="store-content-enhanced">
+              <h4 class="store-item-title">Herb Elixirs</h4>
+              <p class="store-item-description">Potent botanical blends crafted for wellness and vitality.</p>
+              <div class="store-price-section">
+                <span class="store-price">$32.99</span>
+                <button class="store-btn-enhanced">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="store-card-enhanced">
+            <div class="store-image-wrapper">
+              <img loading="lazy" src="img/tienda (6).jpg" alt="Farm Ceramics" class="store-image-enhanced">
+              <div class="store-overlay">
+                <div class="store-badge">Handmade</div>
+              </div>
+            </div>
+            <div class="store-content-enhanced">
+              <h4 class="store-item-title">Farm Ceramics</h4>
+              <p class="store-item-description">Hand-thrown pottery that brings rustic elegance to your table.</p>
+              <div class="store-price-section">
+                <span class="store-price">$28.99</span>
+                <button class="store-btn-enhanced">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="store-cta-section">
+          <h4 class="store-cta-title">Experience Our Full Collection</h4>
+          <p class="store-cta-text">Visit our on-site store for the complete artisan experience</p>
+          <button class="store-main-cta" onclick="window.open('https://maps.app.goo.gl/jkwDrab7g27WtqKr7', '_blank')">Visit Store</button>
         </div>
       </div>
     </section>
 
     <!-- EXPANSION -->
-    <section id="expansion" class="section" aria-labelledby="expansionTitle">
-      <div class="container center">
-        <h3 id="expansionTitle" class="title">Global Expansion</h3>
-        <p class="subtext">We're preparing to bring our ethos and flavors beyond Mexico — watch this space for our upcoming locations.</p>
+    <section id="expansion" class="section expansion-simple" aria-labelledby="expansionTitle">
+      <div class="container">
+        <div class="expansion-header">
+          <h3 id="expansionTitle" class="title">Global Expansion</h3>
+          <p class="subtext">We're preparing to bring our ethos and flavors beyond Mexico — watch this space for our upcoming locations.</p>
+        </div>
 
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px;">
-          <div class="card" style="min-width:160px;text-align:center;">
-            <div style="font-size:28px">🇲🇽</div>
-            <div style="font-weight:700;margin-top:8px">Mexico</div>
-            <div class="muted">Established 2019</div>
+        <div class="expansion-locations">
+          <div class="location-card established">
+            <div class="location-flag">🇲🇽</div>
+            <h4>Mexico</h4>
+            <p class="location-status">Established 2019</p>
           </div>
-          <div class="card" style="min-width:160px;text-align:center;">
-            <div style="font-size:28px">🇺🇸</div>
-            <div style="font-weight:700;margin-top:8px">United States</div>
-            <div class="muted">Coming Soon</div>
+
+          <div class="location-card coming-soon">
+            <div class="location-flag">🇺🇸</div>
+            <h4>United States</h4>
+            <p class="location-status">Coming Soon</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
+    
     <!-- CONTACT -->
     <section id="contact" class="section" aria-labelledby="contactTitle">
       <div class="container">
@@ -3431,6 +3670,1425 @@
         font-size: 1rem;
       }
     }
+
+    /* ENHANCED GALLERY CAROUSEL */
+    .gallery-section-enhanced {
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-section-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('img/galeria (16).jpg') center/cover;
+      opacity: 0.02;
+      z-index: 0;
+    }
+
+    .gallery-header-enhanced {
+      text-align: center;
+      margin-bottom: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery-title-enhanced {
+      color: var(--chosen-blue);
+      font-size: 3.5rem;
+      margin-bottom: 25px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      position: relative;
+    }
+
+    .gallery-title-enhanced::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--terra-orange), var(--chosen-gold));
+      border-radius: 3px;
+    }
+
+    .gallery-subtext-enhanced {
+      color: var(--earth-dark);
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .gallery-carousel-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .gallery-carousel {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+      border-radius: 25px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+
+    .gallery-slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      z-index: 2;
+    }
+
+    .gallery-slide.prev {
+      transform: translateX(-100%);
+    }
+
+    .gallery-card-enhanced {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-image-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-image-enhanced {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .gallery-slide.active .gallery-image-enhanced {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      padding: 60px 40px 40px;
+      transform: translateY(100%);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .gallery-slide.active .gallery-overlay {
+      transform: translateY(0);
+    }
+
+    .gallery-content h4 {
+      color: white;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .gallery-content p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    /* Navigation Buttons */
+    .gallery-navigation {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .gallery-nav-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--chosen-blue);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      pointer-events: all;
+    }
+
+    .gallery-nav-btn:hover {
+      background: var(--terra-orange);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .gallery-nav-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Indicators */
+    .gallery-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+      z-index: 3;
+      position: relative;
+    }
+
+    .gallery-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(93, 78, 55, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .gallery-indicator.active {
+      background: var(--terra-orange);
+      transform: scale(1.3);
+    }
+
+    .gallery-indicator:hover {
+      background: var(--chosen-blue);
+      transform: scale(1.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .gallery-section-enhanced {
+        padding: 80px 0;
+      }
+      
+      .gallery-title-enhanced {
+        font-size: 3rem;
+      }
+      
+      .gallery-carousel {
+        height: 500px;
+        margin: 0 20px;
+      }
+      
+      .gallery-content h4 {
+        font-size: 1.8rem;
+      }
+      
+      .gallery-content p {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-section-enhanced {
+        padding: 60px 0;
+      }
+      
+      .gallery-header-enhanced {
+        margin-bottom: 50px;
+      }
+      
+      .gallery-title-enhanced {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      
+      .gallery-subtext-enhanced {
+        font-size: 1.1rem;
+        padding: 0 20px;
+      }
+      
+      .gallery-carousel {
+        height: 400px;
+        margin: 0 15px;
+        border-radius: 20px;
+      }
+      
+      .gallery-overlay {
+        padding: 40px 25px 25px;
+      }
+      
+      .gallery-content h4 {
+        font-size: 1.5rem;
+      }
+      
+      .gallery-content p {
+        font-size: 1rem;
+      }
+      
+      .gallery-nav-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+      
+      .gallery-navigation {
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-section-enhanced {
+        padding: 50px 0;
+      }
+      
+      .gallery-title-enhanced {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+      
+      .gallery-subtext-enhanced {
+        font-size: 1rem;
+        padding: 0 15px;
+      }
+      
+      .gallery-carousel {
+        height: 350px;
+        margin: 0 10px;
+        border-radius: 15px;
+      }
+      
+      .gallery-overlay {
+        padding: 30px 20px 20px;
+      }
+      
+      .gallery-content h4 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+      
+      .gallery-content p {
+        font-size: 0.9rem;
+      }
+      
+      .gallery-nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+      }
+      
+      .gallery-indicators {
+        gap: 12px;
+        margin-top: 30px;
+      }
+      
+      .gallery-indicator {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    /* ENHANCED ARTISAN COLLECTION */
+    .store-section-enhanced {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg) 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .store-section-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('img/tienda (10).jpg') center/cover;
+      opacity: 0.03;
+      z-index: 0;
+    }
+
+    .store-header-enhanced {
+      text-align: center;
+      margin-bottom: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .store-title-enhanced {
+      color: var(--chosen-blue);
+      font-size: 3.5rem;
+      margin-bottom: 25px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      position: relative;
+    }
+
+    .store-title-enhanced::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--terra-orange), var(--chosen-gold));
+      border-radius: 3px;
+    }
+
+    .store-subtext-enhanced {
+      color: var(--earth-dark);
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .store-grid-enhanced {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .store-card-enhanced {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid rgba(198, 103, 38, 0.1);
+      backdrop-filter: blur(20px);
+      position: relative;
+    }
+
+    .store-card-enhanced:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(198, 103, 38, 0.2);
+      border-color: var(--terra-orange);
+    }
+
+    .store-image-wrapper {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .store-image-enhanced {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .store-card-enhanced:hover .store-image-enhanced {
+      transform: scale(1.1);
+    }
+
+    .store-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(198, 103, 38, 0.1), rgba(93, 78, 55, 0.1));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .store-card-enhanced:hover .store-overlay {
+      opacity: 1;
+    }
+
+    .store-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, var(--terra-orange), var(--chosen-gold));
+      color: white;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 15px rgba(198, 103, 38, 0.3);
+    }
+
+    .store-content-enhanced {
+      padding: 20px;
+      position: relative;
+    }
+
+    .store-item-title {
+      color: var(--chosen-blue);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .store-item-description {
+      color: var(--earth-dark);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 18px;
+      font-weight: 400;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      overflow: hidden;
+    }
+
+    .store-price-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .store-price {
+      color: var(--terra-orange);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .store-btn-enhanced {
+      background: linear-gradient(135deg, var(--terra-orange), var(--chosen-gold));
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 15px rgba(198, 103, 38, 0.3);
+      white-space: nowrap;
+    }
+
+    .store-btn-enhanced:hover {
+      background: linear-gradient(135deg, var(--chosen-blue), var(--chosen-teal));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(93, 78, 55, 0.4);
+    }
+
+    .store-btn-enhanced:active {
+      transform: translateY(0);
+    }
+
+    .store-cta-section {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 50px 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(198, 103, 38, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .store-cta-title {
+      color: var(--chosen-blue);
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .store-cta-text {
+      color: var(--earth-dark);
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .store-main-cta {
+      background: linear-gradient(135deg, var(--chosen-blue), var(--chosen-teal));
+      color: white;
+      border: none;
+      padding: 18px 40px;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 25px rgba(93, 78, 55, 0.3);
+    }
+
+    .store-main-cta:hover {
+      background: linear-gradient(135deg, var(--terra-orange), var(--chosen-gold));
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(198, 103, 38, 0.4);
+    }
+
+    .store-main-cta:active {
+      transform: translateY(-1px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .store-section-enhanced {
+        padding: 80px 0;
+      }
+      
+      .store-title-enhanced {
+        font-size: 3rem;
+      }
+      
+      .store-grid-enhanced {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-bottom: 60px;
+      }
+      
+      .store-card-enhanced {
+        border-radius: 14px;
+      }
+      
+      .store-image-wrapper {
+        height: 180px;
+      }
+      
+      .store-content-enhanced {
+        padding: 18px;
+      }
+      
+      .store-item-title {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+      
+      .store-item-description {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+      }
+      
+      .store-price {
+        font-size: 1.3rem;
+      }
+      
+      .store-btn-enhanced {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+      }
+      
+      .store-cta-section {
+        padding: 40px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .store-section-enhanced {
+        padding: 60px 0;
+      }
+      
+      .store-header-enhanced {
+        margin-bottom: 50px;
+      }
+      
+      .store-title-enhanced {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      
+      .store-subtext-enhanced {
+        font-size: 1.1rem;
+        padding: 0 20px;
+      }
+      
+      .store-grid-enhanced {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 50px;
+        padding: 0 15px;
+      }
+      
+      .store-card-enhanced {
+        border-radius: 12px;
+      }
+      
+      .store-image-wrapper {
+        height: 140px;
+      }
+      
+      .store-badge {
+        top: 8px;
+        right: 8px;
+        padding: 4px 8px;
+        font-size: 0.7rem;
+        border-radius: 12px;
+      }
+      
+      .store-content-enhanced {
+        padding: 15px 12px;
+      }
+      
+      .store-item-title {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+      }
+      
+      .store-item-description {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+      }
+      
+      .store-price-section {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+      }
+      
+      .store-price {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      
+      .store-btn-enhanced {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        border-radius: 8px;
+      }
+      
+      .store-cta-section {
+        padding: 35px 25px;
+        margin: 0 15px;
+      }
+      
+      .store-cta-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .store-section-enhanced {
+        padding: 50px 0;
+      }
+      
+      .store-title-enhanced {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+      
+      .store-subtext-enhanced {
+        font-size: 1rem;
+        padding: 0 15px;
+      }
+      
+      .store-grid-enhanced {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 10px;
+      }
+      
+      .store-card-enhanced {
+        border-radius: 10px;
+      }
+      
+      .store-image-wrapper {
+        height: 120px;
+      }
+      
+      .store-badge {
+        top: 6px;
+        right: 6px;
+        padding: 3px 6px;
+        font-size: 0.6rem;
+        border-radius: 8px;
+      }
+      
+      .store-content-enhanced {
+        padding: 12px 10px;
+      }
+      
+      .store-item-title {
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+      
+      .store-item-description {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+      }
+      
+      .store-price {
+        font-size: 1.1rem;
+      }
+      
+      .store-btn-enhanced {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+        border-radius: 6px;
+      }
+      
+      .store-cta-section {
+        padding: 30px 20px;
+        margin: 0 10px;
+      }
+      
+      .store-cta-title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+      }
+      
+      .store-cta-text {
+        font-size: 1rem;
+        margin-bottom: 25px;
+      }
+      
+      .store-main-cta {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+      }
+    }
+
+    /* SIMPLE GLOBAL EXPANSION */
+    .expansion-simple {
+      background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .expansion-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .expansion-header .title {
+      color: var(--chosen-blue);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .expansion-header .subtext {
+      color: var(--earth-dark);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .expansion-locations {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .location-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      flex: 1;
+      max-width: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .location-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--agricole-orange), var(--chosen-gold));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .location-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .location-card:hover::before {
+      opacity: 1;
+    }
+
+    .location-flag {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .location-card h4 {
+      color: var(--chosen-blue);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .location-status {
+      color: var(--earth-dark);
+      font-size: 1rem;
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    .location-card.established .location-status {
+      color: var(--terra-orange);
+      font-weight: 600;
+    }
+
+    .location-card.coming-soon .location-status {
+      color: var(--chosen-teal);
+      font-weight: 500;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .expansion-simple {
+        padding: 60px 0;
+      }
+
+      .expansion-header .title {
+        font-size: 2rem;
+      }
+
+      .expansion-header .subtext {
+        font-size: 1rem;
+        padding: 0 20px;
+      }
+
+      .expansion-locations {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .location-card {
+        max-width: 280px;
+        padding: 30px 25px;
+      }
+
+      .location-flag {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .location-card h4 {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .expansion-simple {
+        padding: 40px 0;
+      }
+
+      .expansion-header .title {
+        font-size: 1.8rem;
+      }
+
+      .location-card {
+        padding: 25px 20px;
+        margin: 0 10px;
+      }
+
+      .location-flag {
+        font-size: 2rem;
+      }
+    }
+    </style>
+
+    <!-- FOOTER -->
+    }
+
+    .expansion-section-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('img/galeria (15).jpg') center/cover;
+      opacity: 0.03;
+      z-index: 0;
+    }
+
+    .expansion-header-enhanced {
+      text-align: center;
+      margin-bottom: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .expansion-title-enhanced {
+      color: var(--chosen-blue);
+      font-size: 3.5rem;
+      margin-bottom: 25px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      position: relative;
+    }
+
+    .expansion-title-enhanced::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--terra-orange), var(--chosen-gold));
+      border-radius: 3px;
+    }
+
+    .expansion-subtext-enhanced {
+      color: var(--earth-dark);
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .expansion-timeline-enhanced {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto 80px;
+      z-index: 1;
+    }
+
+    .expansion-card-enhanced {
+      display: flex;
+      align-items: center;
+      margin-bottom: 60px;
+      position: relative;
+      opacity: 0.7;
+      transition: all 0.6s ease;
+    }
+
+    .expansion-card-enhanced.active {
+      opacity: 1;
+    }
+
+    .expansion-card-enhanced:hover {
+      opacity: 1;
+      transform: translateX(10px);
+    }
+
+    .expansion-flag-wrapper {
+      position: relative;
+      margin-right: 40px;
+      min-width: 80px;
+    }
+
+    .expansion-flag {
+      font-size: 3rem;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 3px solid transparent;
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .expansion-card-enhanced.active .expansion-flag {
+      border-color: var(--terra-orange);
+      box-shadow: 0 15px 40px rgba(198, 103, 38, 0.3);
+    }
+
+    .expansion-pulse {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .expansion-pulse.active {
+      background: var(--terra-orange);
+      animation: pulse 2s infinite;
+      opacity: 0.6;
+    }
+
+    .expansion-pulse.coming {
+      background: var(--chosen-blue);
+      animation: pulse 3s infinite;
+      opacity: 0.4;
+    }
+
+    .expansion-pulse.future {
+      background: var(--chosen-teal);
+      animation: pulse 4s infinite;
+      opacity: 0.3;
+    }
+
+    .expansion-pulse.vision {
+      background: var(--chosen-gold);
+      animation: pulse 5s infinite;
+      opacity: 0.2;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    .expansion-content {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 2px solid rgba(198, 103, 38, 0.1);
+      backdrop-filter: blur(20px);
+      transition: all 0.4s ease;
+    }
+
+    .expansion-card-enhanced:hover .expansion-content {
+      border-color: var(--terra-orange);
+      box-shadow: 0 15px 40px rgba(198, 103, 38, 0.2);
+    }
+
+    .expansion-location {
+      color: var(--chosen-blue);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .expansion-status {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .expansion-status.established {
+      background: linear-gradient(135deg, var(--terra-orange), var(--chosen-gold));
+      color: white;
+    }
+
+    .expansion-status.coming {
+      background: linear-gradient(135deg, var(--chosen-blue), var(--chosen-teal));
+      color: white;
+    }
+
+    .expansion-status.future {
+      background: linear-gradient(135deg, var(--chosen-teal), var(--chosen-blue));
+      color: white;
+      opacity: 0.8;
+    }
+
+    .expansion-status.vision {
+      background: linear-gradient(135deg, var(--chosen-gold), var(--terra-orange));
+      color: white;
+      opacity: 0.7;
+    }
+
+    .expansion-description {
+      color: var(--earth-dark);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .expansion-line {
+      position: absolute;
+      left: 40px;
+      top: 80px;
+      bottom: -60px;
+      width: 3px;
+      background: linear-gradient(to bottom, transparent, var(--chosen-blue), transparent);
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .expansion-line.active {
+      background: linear-gradient(to bottom, transparent, var(--terra-orange), var(--chosen-blue), transparent);
+      opacity: 0.6;
+    }
+
+    .expansion-card-enhanced:last-child .expansion-line {
+      display: none;
+    }
+
+    .expansion-cta-enhanced {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(198, 103, 38, 0.1);
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .expansion-cta-title {
+      color: var(--chosen-blue);
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .expansion-cta-text {
+      color: var(--earth-dark);
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .expansion-newsletter-btn {
+      background: linear-gradient(135deg, var(--chosen-blue), var(--chosen-teal));
+      color: white;
+      border: none;
+      padding: 18px 40px;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 25px rgba(93, 78, 55, 0.3);
+    }
+
+    .expansion-newsletter-btn:hover {
+      background: linear-gradient(135deg, var(--terra-orange), var(--chosen-gold));
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(198, 103, 38, 0.4);
+    }
+
+    .expansion-newsletter-btn:active {
+      transform: translateY(-1px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .expansion-section-enhanced {
+        padding: 80px 0;
+      }
+      
+      .expansion-title-enhanced {
+        font-size: 3rem;
+      }
+      
+      .expansion-flag-wrapper {
+        margin-right: 30px;
+        min-width: 70px;
+      }
+      
+      .expansion-flag {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+      }
+      
+      .expansion-pulse {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .expansion-content {
+        padding: 25px;
+      }
+      
+      .expansion-line {
+        left: 35px;
+        top: 70px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .expansion-section-enhanced {
+        padding: 60px 0;
+      }
+      
+      .expansion-header-enhanced {
+        margin-bottom: 50px;
+      }
+      
+      .expansion-title-enhanced {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      
+      .expansion-subtext-enhanced {
+        font-size: 1.1rem;
+        padding: 0 20px;
+      }
+      
+      .expansion-card-enhanced {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      
+      .expansion-flag-wrapper {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      
+      .expansion-content {
+        padding: 20px;
+      }
+      
+      .expansion-location {
+        font-size: 1.5rem;
+      }
+      
+      .expansion-line {
+        display: none;
+      }
+      
+      .expansion-cta-enhanced {
+        padding: 35px 25px;
+        margin: 0 20px;
+      }
+      
+      .expansion-cta-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .expansion-section-enhanced {
+        padding: 50px 0;
+      }
+      
+      .expansion-title-enhanced {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+      
+      .expansion-subtext-enhanced {
+        font-size: 1rem;
+        padding: 0 15px;
+      }
+      
+      .expansion-timeline-enhanced {
+        padding: 0 15px;
+      }
+      
+      .expansion-flag {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+      }
+      
+      .expansion-pulse {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .expansion-content {
+        padding: 16px;
+      }
+      
+      .expansion-location {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+      
+      .expansion-status {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+      }
+      
+      .expansion-description {
+        font-size: 0.9rem;
+      }
+      
+      .expansion-cta-enhanced {
+        padding: 30px 20px;
+        margin: 0 15px;
+      }
+      
+      .expansion-cta-title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+      }
+      
+      .expansion-cta-text {
+        font-size: 1rem;
+        margin-bottom: 25px;
+      }
+      
+      .expansion-newsletter-btn {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+      }
+    }
     </style>
 
     <!-- FOOTER -->
@@ -3746,6 +5404,108 @@
           contactForm.reset();
         });
       }
+
+      // Enhanced Gallery Carousel
+      const carousel = document.getElementById('galleryCarousel');
+      const slides = carousel.querySelectorAll('.gallery-slide');
+      const indicators = document.querySelectorAll('.gallery-indicator');
+      const prevBtn = document.getElementById('galleryPrev');
+      const nextBtn = document.getElementById('galleryNext');
+      
+      let currentSlide = 0;
+      let isAnimating = false;
+
+      function updateCarousel() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        // Update slides
+        slides.forEach((slide, index) => {
+          slide.classList.remove('active', 'prev');
+          if (index === currentSlide) {
+            slide.classList.add('active');
+          } else if (index < currentSlide) {
+            slide.classList.add('prev');
+          }
+        });
+
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle('active', index === currentSlide);
+        });
+
+        setTimeout(() => {
+          isAnimating = false;
+        }, 800);
+      }
+
+      function nextSlide() {
+        if (isAnimating) return;
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        if (isAnimating) return;
+        currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+        updateCarousel();
+      }
+
+      function goToSlide(index) {
+        if (isAnimating || index === currentSlide) return;
+        currentSlide = index;
+        updateCarousel();
+      }
+
+      // Event listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => goToSlide(index));
+      });
+
+      // Auto-play carousel
+      let autoplayInterval = setInterval(nextSlide, 5000);
+
+      // Pause autoplay on hover
+      carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoplayInterval);
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        autoplayInterval = setInterval(nextSlide, 5000);
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+      });
+
+      // Touch/swipe support
+      let startX = 0;
+      let endX = 0;
+
+      carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      carousel.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        
+        if (Math.abs(diffX) > 50) {
+          if (diffX > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+        }
+      });
+
+      // Initialize carousel
+      updateCarousel();
 
     })();
   </script>
