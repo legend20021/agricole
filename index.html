@@ -518,66 +518,853 @@
     .input,textarea{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e6e6e6;font-size:0.95rem}
     textarea{min-height:120px;resize:vertical}
 
-    /* reservation widget wrapper */
-    .ot-widget-wrap{display:flex;justify-content:center;align-items:center;margin-top:18px}
-    .ot-widget-wrap .ot-frame{width:100%;max-width:360px;aspect-ratio:320/420;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(16,10,8,0.12);border:0}
-    .ot-widget-wrap iframe{width:100%;height:100%;border:0;display:block}
-
     /* footer */
     footer {
-      background: var(--gradient-secondary);
-      color: var(--white);
-      padding: 60px 0 40px;
-      margin-top: 18px;
-      position: relative;
+      background: #2c1810;
+      color: #ffffff;
+      padding: 35px 0 18px;
+      margin-top: 40px;
     }
-    footer::before {
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 25px;
+    }
+    
+    .footer-brand {
+      flex: 1;
+      max-width: 280px;
+    }
+    
+    .footer-logo {
+      height: 36px;
+      margin-bottom: 10px;
+    }
+    
+    .footer-tagline {
+      color: #e0e0e0;
+      font-size: 0.9rem;
+      line-height: 1.3;
+      margin: 0;
+      opacity: 0.95;
+    }
+    
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-end;
+    }
+    
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: right;
+    }
+    
+    .footer-contact span {
+      color: #e0e0e0;
+      font-size: 0.85rem;
+      line-height: 1.3;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      background: #c66726;
+      color: #ffffff;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-links a:hover {
+      background: #e17b3c;
+      transform: translateY(-1px);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #444;
+      padding-top: 18px;
+      text-align: center;
+    }
+    
+    .footer-bottom p {
+      color: #b0b0b0;
+      font-size: 0.8rem;
+      margin: 0;
+    }
+    
+    /* Responsive footer */
+    @media (max-width: 768px) {
+      footer {
+        padding: 15px 0 10px;
+        margin-top: 25px;
+      }
+      
+      .footer-content {
+        flex-direction: row;
+        gap: 15px;
+        margin-bottom: 0;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .footer-brand {
+        max-width: none;
+        flex: none;
+      }
+      
+      .footer-logo {
+        height: 24px;
+        margin-bottom: 0;
+      }
+      
+      .footer-tagline {
+        display: none;
+      }
+      
+      .footer-info {
+        flex-direction: row;
+        gap: 0;
+        align-items: center;
+      }
+      
+      .footer-contact {
+        display: none;
+      }
+      
+      .social-links {
+        gap: 8px;
+      }
+      
+      .social-links a {
+        width: 26px;
+        height: 26px;
+        font-size: 0.7rem;
+      }
+      
+      .footer-bottom {
+        padding-top: 10px;
+        border-top: 1px solid #444;
+      }
+      
+      .footer-bottom p {
+        font-size: 0.7rem;
+        opacity: 0.8;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      footer {
+        padding: 12px 0 8px;
+      }
+      
+      .footer-content {
+        flex-direction: row;
+        gap: 12px;
+        text-align: left;
+        margin-bottom: 10px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .footer-brand {
+        order: 1;
+        flex: none;
+      }
+      
+      .footer-logo {
+        height: 20px;
+        margin-bottom: 0;
+      }
+      
+      .footer-tagline {
+        display: none;
+      }
+      
+      .footer-info {
+        order: 2;
+        flex-direction: row;
+        gap: 0;
+        align-items: center;
+      }
+      
+      .footer-contact {
+        display: none;
+      }
+      
+      .social-links {
+        gap: 6px;
+      }
+      
+      .social-links a {
+        width: 22px;
+        height: 22px;
+        font-size: 0.65rem;
+      }
+      
+      .footer-bottom {
+        padding-top: 8px;
+        border-top: 1px solid #444;
+      }
+      
+      .footer-bottom p {
+        font-size: 0.65rem;
+        margin: 0;
+        text-align: center;
+      }
+    }
+
+    /* contact section */
+    .contact-section {
+      background: linear-gradient(135deg, #f8f6f3 0%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -20%;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(198, 103, 38, 0.05) 0%, rgba(227, 201, 152, 0.03) 100%);
+      transform: skewX(-15deg);
+      z-index: 1;
+    }
+    
+    .contact-header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .contact-title {
+      font-size: 2.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 15px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    .contact-subtitle {
+      font-size: 1.1rem;
+      color: var(--earth-dark);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .contact-info-card, .contact-form-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(198, 103, 38, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-info-card::before, .contact-form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    
+    .contact-info-card:hover, .contact-form-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+    
+    .contact-info-card:hover::before, .contact-form-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .contact-info-header, .form-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid rgba(198, 103, 38, 0.1);
+    }
+    
+    .contact-icon, .form-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+    
+    .contact-info-header h4, .form-header h4 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+    
+    .contact-details {
+      margin-bottom: 30px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+      padding: 15px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .contact-item:hover {
+      background: rgba(198, 103, 38, 0.03);
+      transform: translateX(3px);
+    }
+    
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-item-content {
+      flex: 1;
+    }
+    
+    .contact-label {
+      display: block;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+    
+    .contact-item-content p {
+      margin: 0;
+      color: var(--earth-dark);
+      line-height: 1.5;
+    }
+    
+    .contact-item-content a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-item-content a:hover {
+      color: var(--accent);
+    }
+    
+    .contact-social {
+      border-top: 2px solid rgba(198, 103, 38, 0.1);
+      padding-top: 25px;
+    }
+    
+    .social-label {
+      display: block;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+    }
+    
+    .contact-socials {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .social-link {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .social-link::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(45deg, var(--chosen-blue-dark), var(--chosen-teal));
-      opacity: 0.1;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      opacity: 0;
+      transition: opacity 0.2s ease;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 40px;
-      align-items: start;
+    
+    .social-link:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 15px rgba(198, 103, 38, 0.2);
+    }
+    
+    .social-link:hover::before {
+      opacity: 1;
+    }
+    
+    .social-link i {
       position: relative;
       z-index: 1;
     }
-    .footer-grid h4 {
-      color: var(--chosen-sand);
-      margin-bottom: 20px;
-      font-size: 1.2em;
+    
+    /* Form Styles */
+    .form-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
-    .footer-grid .muted {
-      color: rgba(255,255,255,0.8);
-      opacity: 0.9;
+    
+    .input-group {
+      position: relative;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid rgba(198, 103, 38, 0.15);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
-    .footer-grid a:hover {
-      color: var(--chosen-gold);
-      transition: color 0.3s ease;
+    
+    .input-group:hover {
+      border-color: rgba(198, 103, 38, 0.3);
+      background: rgba(255, 255, 255, 0.95);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(198, 103, 38, 0.1);
     }
-    .socials a {
-      display: inline-flex;
+    
+    .input-group:focus-within {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 6px 20px rgba(198, 103, 38, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .input-label {
+      display: block;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    
+    .input-label::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 1px;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 12px 0;
+      border: none;
+      border-bottom: 2px solid rgba(198, 103, 38, 0.2);
+      font-size: 1rem;
+      color: var(--earth-dark);
+      background: transparent;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    
+    .form-input::placeholder {
+      color: rgba(88, 88, 88, 0.6);
+      font-style: italic;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-bottom-color: var(--primary);
+      background: transparent;
+      transform: none;
+    }
+    
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+      padding-top: 15px;
+    }
+    
+    .input-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.3s ease;
+      border-radius: 1px;
+    }
+    
+    .form-input:focus + .input-border {
+      width: 100%;
+    }
+    
+    .contact-submit-btn {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border: none;
+      padding: 18px 30px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      margin-right: 12px;
-      background: var(--chosen-gold);
-      color: var(--chosen-blue-dark);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.1);
+      gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
     }
-    .socials a:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(184,134,11,0.3);
+    
+    .contact-submit-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      opacity: 0;
+      transition: opacity 0.2s ease;
     }
+    
+    .contact-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(198, 103, 38, 0.25);
+    }
+    
+    .contact-submit-btn:hover::before {
+      opacity: 1;
+    }
+    
+    .btn-text, .btn-icon {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .btn-icon {
+      transition: transform 0.2s ease;
+    }
+    
+    .contact-submit-btn:hover .btn-icon {
+      transform: translateX(3px);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-section::before {
+        display: none;
+      }
+      
+      .contact-title {
+        font-size: 2rem;
+      }
+      
+      .contact-subtitle {
+        font-size: 1rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .contact-info-card, .contact-form-card {
+        padding: 25px 20px;
+      }
+      
+      .contact-item {
+        padding: 8px;
+        margin-bottom: 15px;
+        gap: 12px;
+      }
+      
+      .contact-item-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+      }
+      
+      .contact-label {
+        font-size: 0.8rem;
+        margin-bottom: 3px;
+      }
+      
+      .contact-item-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+      
+      .social-link {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+      }
+      
+      .contact-social {
+        padding-top: 20px;
+      }
+      
+      .social-label {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .contact-header {
+        margin-bottom: 25px;
+      }
+      
+      .contact-title {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+      }
+      
+      .contact-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+      
+      .contact-info-card, .contact-form-card {
+        padding: 20px 15px;
+      }
+      
+      .contact-info-header, .form-header {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+      }
+      
+      .contact-info-header h4, .form-header h4 {
+        font-size: 1rem;
+        margin: 0;
+      }
+      
+      .contact-icon, .form-icon {
+        font-size: 0.9rem;
+      }
+      
+      .contact-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 8px;
+        margin-bottom: 8px;
+        padding: 6px 0;
+        background: none !important;
+        transform: none !important;
+        border-radius: 0;
+        transition: none;
+      }
+      
+      .contact-item:hover {
+        background: none !important;
+        transform: none !important;
+      }
+      
+      .contact-item-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 0.65rem;
+        flex-shrink: 0;
+      }
+      
+      .contact-label {
+        font-size: 0.7rem;
+        margin-bottom: 2px;
+        letter-spacing: 0.3px;
+      }
+      
+      .contact-item-content p {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        margin: 0;
+      }
+      
+      .contact-item-content br {
+        display: none;
+      }
+      
+      .contact-social {
+        padding-top: 15px;
+        margin-top: 15px;
+      }
+      
+      .social-label {
+        font-size: 0.7rem;
+        margin-bottom: 8px;
+      }
+      
+      .contact-socials {
+        justify-content: flex-start;
+        gap: 8px;
+      }
+      
+      .social-link {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+      }
+      
+      .form-input {
+        padding: 10px 0;
+        font-size: 0.85rem;
+      }
+      
+      .input-group {
+        padding: 12px;
+        margin-bottom: 12px;
+      }
+      
+      .input-label {
+        font-size: 0.7rem;
+        margin-bottom: 8px;
+      }
+      
+      .form-input {
+        padding: 8px 0;
+        font-size: 0.8rem;
+      }
+      
+      .form-content {
+        gap: 15px;
+      }
+      
+      .form-textarea {
+        min-height: 80px;
+      }
+      
+      .contact-submit-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .input-label {
+        font-size: 0.8rem;
+      }
+      
+      /* Extra mobile optimizations */
+      .contact-info-card {
+        margin-bottom: 15px;
+      }
+      
+      .contact-details {
+        margin-bottom: 15px;
+      }
+      
+      .contact-item-content {
+        min-width: 0;
+        word-wrap: break-word;
+      }
+      
+      .contact-grid {
+        gap: 20px;
+      }
+    }
+    
+    /* Extra small screens optimization */
+    @media (max-width: 360px) {
+      .contact-info-card, .contact-form-card {
+        padding: 15px 12px;
+      }
+      
+      .contact-item {
+        margin-bottom: 6px;
+        padding: 4px 0;
+      }
+      
+      .contact-item-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
+      }
+      
+      .contact-label {
+        font-size: 0.65rem;
+      }
+      
+      .contact-item-content p {
+        font-size: 0.7rem;
+      }
+      
+      .social-link {
+        width: 24px;
+        height: 24px;
+        font-size: 0.65rem;
+      }
+      
+      .contact-socials {
+        gap: 6px;
+      }
+      
+      .contact-title {
+        font-size: 1.4rem;
+      }
+      
+      .contact-subtitle {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* carousel */
 
   </style>
 </head>
@@ -3027,7 +3814,7 @@
 
           <article class="store-card-enhanced">
             <div class="store-image-wrapper">
-              <img loading="lazy" src="img/tienda (3).jpg" alt="Earth's Bounty Box" class="store-image-enhanced">
+              <img loading="lazy" src="img/tienda (12).jpg" alt="Earth's Bounty Box" class="store-image-enhanced">
               <div class="store-overlay">
                 <div class="store-badge">Weekly</div>
               </div>
@@ -3044,7 +3831,7 @@
 
           <article class="store-card-enhanced">
             <div class="store-image-wrapper">
-              <img loading="lazy" src="img/tienda (4).jpg" alt="Sacred Grains" class="store-image-enhanced">
+              <img loading="lazy" src="img/tienda (11).jpg" alt="Sacred Grains" class="store-image-enhanced">
               <div class="store-overlay">
                 <div class="store-badge">Artisan</div>
               </div>
@@ -3078,7 +3865,7 @@
 
           <article class="store-card-enhanced">
             <div class="store-image-wrapper">
-              <img loading="lazy" src="img/tienda (6).jpg" alt="Farm Ceramics" class="store-image-enhanced">
+              <img loading="lazy" src="img/tienda (19).jpg" alt="Farm Ceramics" class="store-image-enhanced">
               <div class="store-overlay">
                 <div class="store-badge">Handmade</div>
               </div>
@@ -3127,40 +3914,95 @@
     </section>
 
     <!-- CONTACT -->
-    
-    <!-- CONTACT -->
-    <section id="contact" class="section" aria-labelledby="contactTitle">
+    <section id="contact" class="section contact-section" aria-labelledby="contactTitle">
       <div class="container">
-        <h3 id="contactTitle" class="title">Get In Touch</h3>
-        <p class="subtext">Questions about bookings, events or the farm? Reach out and we'll reply promptly.</p>
+        <div class="contact-header">
+          <h3 id="contactTitle" class="title contact-title">Get In Touch</h3>
+          <p class="subtext contact-subtitle">Questions about bookings, events or the farm? Reach out and we'll reply promptly.</p>
+        </div>
 
-        <div class="contact-grid" style="margin-top:18px;">
-          <div class="card">
-            <h4 style="margin-top:0">Contact Information</h4>
-            <p><strong>Location</strong><br>Los Cabos Highway KM 62<br>El Pescadero, Baja California Sur</p>
-            <p><strong>Phone</strong><br><a href="tel:+5226121303130">(612) 130 3130</a></p>
-            <p><strong>Email</strong><br><a href="mailto:info@agricole.mx">info@agricole.mx</a></p>
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <div class="contact-info-header">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <h4>Contact Information</h4>
+            </div>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <i class="fas fa-map-pin"></i>
+                </div>
+                <div class="contact-item-content">
+                  <span class="contact-label">Location</span>
+                  <p>Los Cabos Highway KM 62<br>El Pescadero, Baja California Sur</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-item-content">
+                  <span class="contact-label">Phone</span>
+                  <p><a href="tel:+5226121303130">(612) 130 3130</a></p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-item-content">
+                  <span class="contact-label">Email</span>
+                  <p><a href="mailto:info@agricole.mx">info@agricole.mx</a></p>
+                </div>
+              </div>
+            </div>
 
-            <div style="margin-top:12px" class="socials" aria-hidden="false">
-              <a href="https://www.facebook.com/profile.php?id=100086413801905" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/cocinadecampo.agricole/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://www.instagram.com/tiendadecampo.agricole/" target="_blank" aria-label="Store Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <div class="contact-social">
+              <span class="social-label">Follow Us</span>
+              <div class="contact-socials">
+                <a href="https://www.facebook.com/profile.php?id=100086413801905" target="_blank" aria-label="Facebook" class="social-link">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/cocinadecampo.agricole/" target="_blank" aria-label="Instagram" class="social-link">
+                  <i class="fab fa-instagram"></i>
+                </a>
+
+              </div>
             </div>
           </div>
 
-          <form id="contactForm" class="card" aria-label="Contact form">
-            <h4 style="margin-top:0">Send us a message</h4>
-            <div class="form-row">
-              <label>Full name
-                <input class="input" required name="name" type="text" inputmode="text" />
-              </label>
-              <label>Email
-                <input class="input" required name="email" type="email" />
-              </label>
-              <label>Message
-                <textarea class="input" required name="message" rows="5"></textarea>
-              </label>
-              <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+          <form id="contactForm" class="contact-form-card" aria-label="Contact form">
+            <div class="form-header">
+              <i class="fas fa-paper-plane form-icon"></i>
+              <h4>Send us a message</h4>
+            </div>
+            
+            <div class="form-content">
+              <div class="input-group">
+                <label class="input-label">Full name</label>
+                <input class="form-input" required name="name" type="text" inputmode="text" placeholder="Enter your full name" />
+                <div class="input-border"></div>
+              </div>
+              
+              <div class="input-group">
+                <label class="input-label">Email</label>
+                <input class="form-input" required name="email" type="email" placeholder="Enter your email address" />
+                <div class="input-border"></div>
+              </div>
+              
+              <div class="input-group">
+                <label class="input-label">Message</label>
+                <textarea class="form-input form-textarea" required name="message" rows="5" placeholder="Tell us about your inquiry..."></textarea>
+                <div class="input-border"></div>
+              </div>
+              
+              <button type="submit" class="contact-submit-btn">
+                <span class="btn-text">Send Message</span>
+                <i class="fas fa-arrow-right btn-icon"></i>
+              </button>
             </div>
           </form>
         </div>
@@ -3168,36 +4010,181 @@
     </section>
 
     <!-- RESERVATIONS: Enhanced OpenTable Integration -->
-    <section id="reservations" class="section" style="background:linear-gradient(180deg,var(--accent-3),var(--bg));">
+    <section id="reservations" class="section reservation-section" aria-labelledby="reservationTitle">
       <div class="container">
-        <h3 class="title">Reserve Your Experience</h3>
-        <p class="subtext">Book your farm-to-table journey at Agricole. Experience authentic flavors in an extraordinary setting.</p>
+        <div class="reservation-header">
+          <h3 id="reservationTitle" class="title reservation-title">Reserve Your Experience</h3>
+          <p class="subtext reservation-subtitle">Book your farm-to-table journey at Agricole. Experience authentic flavors in an extraordinary setting where every meal tells a story.</p>
+        </div>
 
-        <div class="reservation-grid">
-          <div class="reservation-info card">
-            <h4>Dining Hours</h4>
-            <ul class="hours-list">
-              <li><strong>Lunch</strong><br>Wed-Sun: 12:00 PM - 4:00 PM</li>
-              <li><strong>Dinner</strong><br>Wed-Sat: 6:00 PM - 10:00 PM</li>
-              <li><strong>Sunday Brunch</strong><br>10:00 AM - 2:00 PM</li>
-            </ul>
-            <div class="reservation-note">
-              <i class="fa-solid fa-info-circle"></i>
-              <p>For groups of 8 or more, please contact us directly at <a href="tel:+5226121303130">(612) 130 3130</a></p>
-            </div>
-          </div>
+        <div class="reservation-content">
+          <div class="reservation-main-card">
+            <div class="reservation-grid">
+              <div class="reservation-info-card">
+                <div class="info-header">
+                  <i class="fas fa-clock reservation-icon"></i>
+                  <div>
+                    <h4>Dining Hours</h4>
+                    <p class="info-subtitle">Farm-to-table excellence awaits</p>
+                  </div>
+                </div>
+                
+                <div class="hours-grid">
+                  <div class="hour-item">
+                    <div class="hour-label">
+                      <i class="fas fa-sun"></i>
+                      <span>All Day</span>
+                    </div>
+                    <div class="hour-time">
+                      <p>Mon, Wed-Sun</p>
+                      <p class="time-range">8:00 AM - 8:00 PM</p>
+                    </div>
+                  </div>
+                  
+                  <div class="hour-item">
+                    <div class="hour-label">
+                      <i class="fas fa-calendar-times"></i>
+                      <span>Closed</span>
+                    </div>
+                    <div class="hour-time">
+                      <p>Tuesday</p>
+                      <p class="time-range">Closed</p>
+                    </div>
+                  </div>
+                  
+                  <div class="hour-item special-note">
+                    <div class="hour-label">
+                      <i class="fas fa-info-circle"></i>
+                      <span>Kitchen Closes</span>
+                    </div>
+                    <div class="hour-time">
+                      <p>All Days</p>
+                      <p class="time-range">8:00 PM Sharp</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="reservation-features">
+                  <div class="feature-item">
+                    <i class="fas fa-dog"></i>
+                    <span>Dog Friendly</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-leaf"></i>
+                    <span>Organic Farm</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-tree"></i>
+                    <span>Outdoor Dining</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-cocktail"></i>
+                    <span>Full Bar</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-seedling"></i>
+                    <span>Vegan Options</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <span>Good for Groups</span>
+                  </div>
+                </div>
 
-          <div class="ot-widget-wrap" aria-live="polite">
-            <div id="ot-widget-container6" data-r3uid="ysFAt9RFF" class="ot-frame">
-              <iframe 
-                src="https://www.opentable.com.mx/widget/reservation/canvas?rid=1287334&amp;type=standard&amp;theme=dark&amp;overlay=false&amp;domain=commx&amp;lang=es-MX&amp;r3uid=_10N_z6IP&amp;newtab=false&amp;ot_source=Restaurant%20website&amp;color=5&amp;dark=true&amp;displayConfig={'styling':{'background':{'color':'#ffffff'},'primary':{'color':'#c66726'},'secondary':{'color':'#e3c998'}},'layout':'vertical','timeslots':{'showAsGrid':true},'elements':{'logo':{'hidden':false},'locationIcon':{'hidden':false},'coverImage':{'hidden':false},'ratings':{'hidden':false}}}"
-                style="min-width:360px;width:100%;height:520px;border-radius:var(--radius);box-shadow:var(--shadow-sm);"
-                frameborder="0" 
-                scrolling="no" 
-                name="opentable-make-reservation-widget" 
-                title="Online Reservations | OpenTable, Agricole"
-                loading="lazy">
-              </iframe>
+                <div class="contact-reservation">
+                  <div class="contact-item-compact">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                      <span>Reservations & Info</span>
+                      <a href="tel:+52612217374">(612) 217 3734</a>
+                    </div>
+                  </div>
+                  <div class="contact-item-compact">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                      <span>Location</span>
+                      <p>Carretera Los Cabos KM 62, El Pescadero</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="reservation-widget-card">
+                <div class="widget-header">
+                  <i class="fas fa-calendar-check widget-icon"></i>
+                  <div>
+                    <h4>Book Your Table</h4>
+                    <p class="widget-subtitle">Secure your culinary experience</p>
+                  </div>
+                </div>
+                
+                <div class="widget-container">
+                  <div class="widget-wrapper">
+                    <iframe 
+                      src="https://www.opentable.com.mx/widget/reservation/canvas?rid=1287334&amp;type=standard&amp;theme=standard&amp;overlay=false&amp;domain=commx&amp;lang=es-MX&amp;r3uid=xG0gKcFGz&amp;newtab=false&amp;ot_source=Restaurant%20website&amp;color=1" 
+                      width="224" 
+                      height="301" 
+                      frameborder="0" 
+                      scrolling="no" 
+                      name="opentable-make-reservation-widget" 
+                      title="Reservaciones en línea | OpenTable, Cocina de Campo"
+                      class="opentable-widget">
+                    </iframe>
+                  </div>
+                  
+                  <div class="widget-sidebar">
+                    <div class="rating-card">
+                      <div class="rating-header">
+                        <i class="fas fa-star"></i>
+                        <span class="rating-score">4.7</span>
+                        <span class="rating-text">OpenTable Rating</span>
+                      </div>
+                      <p class="rating-reviews">Based on 36 verified reviews</p>
+                    </div>
+                    
+                    <div class="quick-info-card">
+                      <h5>Why Choose Us?</h5>
+                      <ul class="quick-benefits">
+                        <li><i class="fas fa-seedling"></i> 3-acre organic farm</li>
+                        <li><i class="fas fa-chef-hat"></i> Chef Daniel Pantoja</li>
+                        <li><i class="fas fa-wine-glass"></i> Creative cocktails</li>
+                        <li><i class="fas fa-mountain"></i> Beautiful outdoor setting</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="pricing-card">
+                      <div class="price-info">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                          <span class="price-label">Price Range</span>
+                          <span class="price-range">$500+ MXN per person</span>
+                        </div>
+                      </div>
+                      <div class="payment-methods">
+                        <span>We Accept:</span>
+                        <div class="payment-icons">
+                          <i class="fab fa-cc-visa"></i>
+                          <i class="fab fa-cc-mastercard"></i>
+                          <i class="fab fa-cc-amex"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="widget-footer">
+                    <div class="footer-content">
+                      <div class="powered-info">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Powered by <strong>OpenTable</strong> • Rated 4.7/5 ⭐</span>
+                      </div>
+                      <div class="alt-booking">
+                        <span>Prefer to call? </span>
+                        <a href="tel:+52612217374" class="phone-link">(612) 217 3734</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3205,63 +4192,842 @@
     </section>
 
     <style>
-    .reservation-grid {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 24px;
-      margin-top: 32px;
-      align-items: start;
-    }
-    .reservation-info {
-      padding: 24px;
-      background: var(--white);
-      border: 1px solid var(--accent);
-      box-shadow: var(--shadow-sm);
-    }
-    .hours-list {
-      list-style: none;
-      padding: 0;
-      margin: 16px 0;
-    }
-    .hours-list li {
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--accent-3);
-    }
-    .hours-list li:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    .reservation-note {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 12px;
-      background: var(--accent-3);
-      border-radius: var(--radius);
-      margin-top: 16px;
-    }
-    .reservation-note i {
-      color: var(--primary);
-      font-size: 1.2em;
-    }
-    .reservation-note p {
-      margin: 0;
-      font-size: 0.9em;
-    }
-    .ot-widget-wrap {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-lg);
+    /* Reservation Section Styles */
+    .reservation-section {
+      background: linear-gradient(135deg, rgba(227, 201, 152, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%);
+      position: relative;
       overflow: hidden;
     }
+    
+    .reservation-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%23c66726" opacity="0.1"/><circle cx="30" cy="20" r="1" fill="%23e3c998" opacity="0.1"/><circle cx="70" cy="30" r="1" fill="%23c66726" opacity="0.1"/><circle cx="90" cy="50" r="1" fill="%23e3c998" opacity="0.1"/></svg>');
+      pointer-events: none;
+    }
+    
+    .reservation-header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .reservation-title {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    
+    .reservation-subtitle {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--earth-dark);
+    }
+    
+    .reservation-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    
+    .reservation-main-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      border: 1px solid rgba(198, 103, 38, 0.15);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 40px rgba(198, 103, 38, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .reservation-main-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 50px rgba(198, 103, 38, 0.15);
+    }
+    
+    .reservation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0;
+    }
+    
+    .reservation-info-card {
+      padding: 40px 35px;
+      background: linear-gradient(135deg, rgba(198, 103, 38, 0.05) 0%, transparent 100%);
+      border-right: 1px solid rgba(198, 103, 38, 0.1);
+    }
+    
+    .info-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid rgba(198, 103, 38, 0.1);
+    }
+    
+    .info-subtitle {
+      margin: 5px 0 0;
+      color: var(--earth-dark);
+      font-size: 0.9rem;
+      opacity: 0.8;
+      font-style: italic;
+    }
+    
+    .reservation-widget-card {
+      padding: 40px 35px;
+      background: rgba(255, 255, 255, 0.98);
+    }
+    
+    .widget-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid rgba(198, 103, 38, 0.1);
+    }
+    
+    .reservation-icon, .widget-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+    
+    .info-header h4, .widget-header h4 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    .widget-header {
+      text-align: center;
+    }
+    
+    .widget-subtitle {
+      margin: 10px 0 0;
+      color: var(--earth-dark);
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+    
+    .hours-grid {
+      padding: 30px;
+    }
+    
+    .hour-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(198, 103, 38, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .hour-item:last-child {
+      border-bottom: none;
+    }
+    
+    .hour-item:hover {
+      background: rgba(198, 103, 38, 0.03);
+      padding-left: 10px;
+      margin: 0 -10px;
+      border-radius: 10px;
+    }
+    
+    .hour-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .hour-label i {
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+    }
+    
+    .hour-time {
+      text-align: right;
+    }
+    
+    .hour-time p {
+      margin: 0;
+      color: var(--earth-dark);
+      font-size: 0.9rem;
+    }
+    
+    .time-range {
+      font-weight: 600;
+      color: var(--primary) !important;
+      font-size: 1rem !important;
+    }
+    
+    .reservation-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 25px 0;
+      border-top: 1px solid rgba(198, 103, 38, 0.1);
+      border-bottom: 1px solid rgba(198, 103, 38, 0.1);
+      margin: 20px 0;
+    }
+    
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-item:hover {
+      background: rgba(198, 103, 38, 0.05);
+      transform: translateY(-2px);
+    }
+    
+    .feature-item i {
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+    }
+    
+    .feature-item span {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    
+    .contact-reservation {
+      margin-top: 25px;
+    }
+    
+    .contact-item-compact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+      padding: 12px;
+      background: rgba(198, 103, 38, 0.03);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item-compact:hover {
+      background: rgba(198, 103, 38, 0.08);
+      transform: translateX(3px);
+    }
+    
+    .contact-item-compact i {
+      width: 25px;
+      height: 25px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-item-compact div span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+    }
+    
+    .contact-item-compact div a,
+    .contact-item-compact div p {
+      margin: 0;
+      color: var(--earth-dark);
+      font-size: 0.85rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .contact-item-compact div a:hover {
+      color: var(--primary);
+    }
+    
+    .widget-container {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 25px;
+      align-items: start;
+    }
+    
+    .widget-wrapper {
+      border-radius: 15px;
+      overflow: hidden;
+      background: #f8f9fa;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(198, 103, 38, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-height: 341px;
+    }
+    
+    .opentable-widget {
+      width: 224px;
+      height: 301px;
+      border: none;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .widget-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .rating-card, .quick-info-card, .pricing-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(198, 103, 38, 0.15);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(198, 103, 38, 0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .rating-card:hover, .quick-info-card:hover, .pricing-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(198, 103, 38, 0.12);
+    }
+    
+    .rating-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .rating-header i {
+      color: #ffa500;
+      font-size: 1.2rem;
+    }
+    
+    .rating-score {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .rating-text {
+      font-size: 0.85rem;
+      color: var(--earth-dark);
+      font-weight: 600;
+    }
+    
+    .rating-reviews {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--earth-dark);
+      opacity: 0.8;
+    }
+    
+    .quick-info-card h5 {
+      margin: 0 0 15px;
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    .quick-benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .quick-benefits li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      color: var(--earth-dark);
+    }
+    
+    .quick-benefits li:last-child {
+      margin-bottom: 0;
+    }
+    
+    .quick-benefits i {
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+    
+    .pricing-card {
+      text-align: center;
+    }
+    
+    .price-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(198, 103, 38, 0.1);
+    }
+    
+    .price-info i {
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+    }
+    
+    .price-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    .price-range {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--earth-dark);
+      font-weight: 500;
+    }
+    
+    .payment-methods span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .payment-icons {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .payment-icons i {
+      font-size: 1.2rem;
+      color: var(--earth-dark);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+    
+    .payment-icons i:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    
+    .widget-footer {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(198, 103, 38, 0.1);
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .powered-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--earth-dark);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .powered-info i {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+    
+    .alt-booking {
+      font-size: 0.8rem;
+      color: var(--earth-dark);
+    }
+    
+    .phone-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .phone-link:hover {
+      color: var(--accent);
+    }
+    
+    .special-note {
+      background: rgba(198, 103, 38, 0.05);
+      border-radius: 8px;
+      padding: 15px 0;
+    }
+    
+    .special-note .hour-label i {
+      background: linear-gradient(135deg, #e67e22, var(--accent));
+    }
+    
+    /* Responsive Design */
     @media (max-width: 768px) {
+      .reservation-content {
+        gap: 20px;
+      }
+      
       .reservation-grid {
         grid-template-columns: 1fr;
+        gap: 0;
+      }
+      
+      .reservation-info-card, .reservation-widget-card {
+        padding: 25px 20px;
+      }
+      
+      .reservation-info-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(198, 103, 38, 0.1);
+      }
+      
+      .reservation-title {
+        font-size: 2rem;
+      }
+      
+      .reservation-subtitle {
+        font-size: 1rem;
+      }
+      
+      .reservation-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 20px 0;
+      }
+      
+      .feature-item {
+        padding: 8px;
+      }
+      
+      .feature-item i {
+        width: 26px;
+        height: 26px;
+        font-size: 0.7rem;
+      }
+      
+      .feature-item span {
+        font-size: 0.7rem;
+      }
+      
+      .contact-item-compact {
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .widget-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .widget-sidebar {
+        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+        gap: 15px;
+      }
+      
+      .rating-card, .quick-info-card, .pricing-card {
+        padding: 15px;
+      }
+      
+      .widget-wrapper {
+        padding: 15px;
+        min-height: auto;
+      }
+      
+      .opentable-widget {
+        width: 224px;
+        height: 301px;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
       }
     }
-
+    
+    @media (max-width: 480px) {
+      .reservation-header {
+        margin-bottom: 25px;
+      }
+      
+      .reservation-title {
+        font-size: 1.6rem;
+      }
+      
+      .reservation-subtitle {
+        font-size: 0.9rem;
+      }
+      
+      .reservation-main-card {
+        border-radius: 15px;
+        margin: 0 -5px;
+      }
+      
+      .reservation-info-card, .reservation-widget-card {
+        padding: 20px 15px;
+      }
+      
+      .info-header, .widget-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+      }
+      
+      .hours-grid {
+        gap: 8px;
+      }
+      
+      .hour-item {
+        padding: 12px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      
+      .hour-time {
+        text-align: left;
+      }
+      
+      .reservation-features {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 15px 0;
+        margin: 15px 0;
+      }
+      
+      .feature-item {
+        padding: 6px;
+      }
+      
+      .feature-item i {
+        width: 22px;
+        height: 22px;
+        font-size: 0.65rem;
+      }
+      
+      .feature-item span {
+        font-size: 0.65rem;
+      }
+      
+      .contact-reservation {
+        margin-top: 15px;
+      }
+      
+      .contact-item-compact {
+        padding: 8px;
+        margin-bottom: 8px;
+      }
+      
+      .contact-item-compact i {
+        width: 22px;
+        height: 22px;
+        font-size: 0.65rem;
+      }
+      
+      .contact-item-compact div span {
+        font-size: 0.7rem;
+      }
+      
+      .contact-item-compact div a,
+      .contact-item-compact div p {
+        font-size: 0.8rem;
+      }
+      
+      .widget-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .widget-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .rating-card, .quick-info-card, .pricing-card {
+        padding: 12px;
+      }
+      
+      .quick-info-card h5 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      
+      .quick-benefits li {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+      }
+      
+      .quick-benefits i {
+        width: 18px;
+        height: 18px;
+        font-size: 0.65rem;
+      }
+      
+      .rating-header {
+        gap: 6px;
+      }
+      
+      .rating-score {
+        font-size: 1.2rem;
+      }
+      
+      .rating-text {
+        font-size: 0.8rem;
+      }
+      
+      .rating-reviews {
+        font-size: 0.75rem;
+      }
+      
+      .price-info {
+        gap: 10px;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+      }
+      
+      .price-info i {
+        width: 26px;
+        height: 26px;
+        font-size: 0.75rem;
+      }
+      
+      .price-label {
+        font-size: 0.7rem;
+      }
+      
+      .price-range {
+        font-size: 0.85rem;
+      }
+      
+      .payment-methods span {
+        font-size: 0.75rem;
+        margin-bottom: 6px;
+      }
+      
+      .payment-icons i {
+        font-size: 1rem;
+      }
+      
+      .widget-wrapper {
+        padding: 10px;
+      }
+      
+      .opentable-widget {
+        width: 224px;
+        height: 301px;
+        transform: scale(0.9);
+      }
+      
+      .widget-footer {
+        margin-top: 15px;
+        padding-top: 15px;
+      }
+      
+      .powered-info, .alt-booking {
+        font-size: 0.75rem;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .reservation-main-card {
+        margin: 0;
+      }
+      
+      .reservation-info-card, .reservation-widget-card {
+        padding: 15px 12px;
+      }
+      
+      .reservation-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+      }
+      
+      .feature-item span {
+        font-size: 0.6rem;
+      }
+      
+      .widget-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      
+      .quick-info-card {
+        grid-column: 1 / -1;
+      }
+      
+      .opentable-widget {
+        height: 200px;
+      }
+    }
     /* RESPONSIVE - ULTRA COMPACT & ELEGANT */
     
     /* TABLET OPTIMIZATION */
@@ -4642,184 +6408,37 @@
     </style>
 
     <!-- FOOTER -->
-    }
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="img/imgi_1_logo_blanco.svg" alt="Agricole" class="footer-logo">
+            <p class="footer-tagline">Farm-to-table excellence from Mexico</p>
+          </div>
+          
+          <div class="footer-info">
+            <div class="footer-contact">
+              <span>info@agricole.mx</span>
+              <span>(612) 130 3130</span>
+            </div>
+            
+            <div class="social-links">
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span>Mexico</p>
+        </div>
+      </div>
+    </footer>
+  </main>
 
-    .expansion-section-enhanced::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('img/galeria (15).jpg') center/cover;
-      opacity: 0.03;
-      z-index: 0;
-    }
-
-    .expansion-header-enhanced {
-      text-align: center;
-      margin-bottom: 80px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .expansion-title-enhanced {
-      color: var(--chosen-blue);
-      font-size: 3.5rem;
-      margin-bottom: 25px;
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      position: relative;
-    }
-
-    .expansion-title-enhanced::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 140px;
-      height: 5px;
-      background: linear-gradient(90deg, var(--terra-orange), var(--chosen-gold));
-      border-radius: 3px;
-    }
-
-    .expansion-subtext-enhanced {
-      color: var(--earth-dark);
-      font-size: 1.3rem;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.7;
-      font-weight: 400;
-    }
-
-    .expansion-timeline-enhanced {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto 80px;
-      z-index: 1;
-    }
-
-    .expansion-card-enhanced {
-      display: flex;
-      align-items: center;
-      margin-bottom: 60px;
-      position: relative;
-      opacity: 0.7;
-      transition: all 0.6s ease;
-    }
-
-    .expansion-card-enhanced.active {
-      opacity: 1;
-    }
-
-    .expansion-card-enhanced:hover {
-      opacity: 1;
-      transform: translateX(10px);
-    }
-
-    .expansion-flag-wrapper {
-      position: relative;
-      margin-right: 40px;
-      min-width: 80px;
-    }
-
-    .expansion-flag {
-      font-size: 3rem;
-      width: 80px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 50%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border: 3px solid transparent;
-      transition: all 0.4s ease;
-      position: relative;
-      z-index: 2;
-    }
-
-    .expansion-card-enhanced.active .expansion-flag {
-      border-color: var(--terra-orange);
-      box-shadow: 0 15px 40px rgba(198, 103, 38, 0.3);
-    }
-
-    .expansion-pulse {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .expansion-pulse.active {
-      background: var(--terra-orange);
-      animation: pulse 2s infinite;
-      opacity: 0.6;
-    }
-
-    .expansion-pulse.coming {
-      background: var(--chosen-blue);
-      animation: pulse 3s infinite;
-      opacity: 0.4;
-    }
-
-    .expansion-pulse.future {
-      background: var(--chosen-teal);
-      animation: pulse 4s infinite;
-      opacity: 0.3;
-    }
-
-    .expansion-pulse.vision {
-      background: var(--chosen-gold);
-      animation: pulse 5s infinite;
-      opacity: 0.2;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.6;
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0.3;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1.4);
-        opacity: 0;
-      }
-    }
-
-    .expansion-content {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      border: 2px solid rgba(198, 103, 38, 0.1);
-      backdrop-filter: blur(20px);
-      transition: all 0.4s ease;
-    }
-
-    .expansion-card-enhanced:hover .expansion-content {
-      border-color: var(--terra-orange);
-      box-shadow: 0 15px 40px rgba(198, 103, 38, 0.2);
-    }
-
-    .expansion-location {
-      color: var(--chosen-blue);
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-
-    .expansion-status {
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 15px;
@@ -5174,7 +6793,7 @@
       }
 
       // Animation: 0 -> 100% in 4000ms with easeOutCubic
-      const DURATION = 3000;
+      const DURATION = 2000;
       function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 
       let startTime = null;
