@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addictive Strawberries and Cream Recipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #e63946;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #f1faee;
+            border: none;
+            padding: 10px 20px;
+            color: #333;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #a8dadc;
+        }
+        #commentSection {
+            margin-top: 20px;
+        }
+        #comments {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Addictive Strawberries and Cream Recipe</h1>
+    <h2>Ingredients</h2>
+    <ul>
+        <li>2 cups fresh strawberries</li>
+        <li>1 cup heavy cream</li>
+        <li>1/4 cup sugar</li>
+        <li>1 tsp vanilla extract</li>
+        <li>Mint leaves for garnish</li>
+    </ul>
+    <h2>Instructions</h2>
+    <ol>
+        <li>Wash and slice the strawberries.</li>
+        <li>In a mixing bowl, whisk together heavy cream, sugar, and vanilla extract until soft peaks form.</li>
+        <li>Layer the strawberries and whipped cream in a serving dish.</li>
+        <li>Garnish with mint leaves and serve immediately.</li>
+    </ol>
+    <h2>Comments</h2>
+    <div id="commentSection">
+        <input type="text" id="commentInput" placeholder="Leave a comment...">
+        <button onclick="submitComment()">Submit</button>
+    </div>
+    <div id="comments"></div>
+    <script>
+        function submitComment() {
+            var commentInput = document.getElementById('commentInput');
+            var comment = commentInput.value;
+            if (comment) {
+                var commentsDiv = document.getElementById('comments');
+                commentsDiv.innerHTML += '<p>' + comment + '</p>';
+                commentInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
